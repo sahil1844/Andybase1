@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:gravity="top"
+        android:background="#A8C3C3"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:titleTextColor="@color/white"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true">
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:text="Home"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="338dp"
+        android:layout_height="173dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="83dp"
+        android:layout_marginEnd="31dp"
+        android:src="@drawable/androidlogo" />
+
+    <ScrollView
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:layout_below="@id/imageView"
+        android:layout_above="@+id/bottombar">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="10sp"
+                android:text="@string/introtitle"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp"
+                android:layout_marginStart="52dp"
+                android:text="Android is an open-source operating system primarily designed for mobile devices such as smartphones and tablets. It was originally developed by Android Inc., a company that Google acquired in 2005. Since its inception, Android has grown to become the most widely used mobile operating system in the world, powering billions of devices across various manufacturers. Its flexibility, extensive application ecosystem, and deep integration with Google services have made it a dominant force in the mobile industry."
+                android:textColor="@color/black"
+                android:textSize="14dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="10sp"
+                android:text="Key Features of Android"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp"
+                android:layout_marginStart="52dp"
+                android:text="One of the standout features of Android is its open-source nature. Based on the Linux kernel, Android's source code is freely available for anyone to use, modify, and distribute. This openness has encouraged a broad and diverse developer community to innovate and create a wide range of applications and customizations. Manufacturers can tailor the OS to their specific hardware, enabling them to differentiate their devices in a competitive market."
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+            <TextView
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp"
+                android:layout_marginStart="52dp"
+                android:text="The customization capabilities of Android are another major advantage. Users can personalize their devices with different themes, widgets, and launchers, creating a unique user experience. The Google Play Store offers millions of applications, covering every conceivable category from productivity tools to games, enhancing the functionality and versatility of Android devices. This extensive application ecosystem is a key factor in Android's widespread adoption."
+                android:textColor="@color/black"
+                android:textSize="14dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="10sp"
+                android:text="Evolution Through Versions"
+                android:textColor="@color/black"
+                android:textSize="18dp"/>
+            <TextView
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp"
+                android:layout_marginStart="52dp"
+                android:text="Android's evolution through various versions has introduced significant enhancements and new features. Starting with Android 1.0 in 2008, which included basic functionalities, the OS has continuously improved with each iteration. Notable versions include Android 4.0 Ice Cream Sandwich, which unified the user interface for both smartphones and tablets, and Android 5.0 Lollipop, which introduced Material Design, a comprehensive redesign of the user interface. More recent versions like Android 10 and Android 11 have focused on privacy, security, and user experience, introducing features such as dark mode, enhanced notifications, and improved permission controls.\n\nEach version of Android is typically named after a dessert in alphabetical order, a tradition that continued until Android 10, which marked a shift to a numerical naming convention. This practice not only made it easier for users to remember different versions but also added a playful aspect to the software's development."
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="10sp"
+                android:text="Development and Ecosystem"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp"
+                android:layout_marginStart="52dp"
+                android:text="The development ecosystem around Android is robust and well-supported. Android Studio, the official integrated development environment (IDE), provides powerful tools for coding, testing, and debugging applications. Developers predominantly use Java or Kotlin, with Kotlin becoming the preferred language due to its modern syntax and compatibility with Java. The extensive libraries and frameworks available for Android streamline common tasks such as UI design, data storage, and network communication, enabling developers to focus on building innovative applications.\n\nThe Android community is large and active, with numerous forums, user groups, and conferences where developers can share knowledge and collaborate. Google's extensive documentation and support resources further facilitate the development process, ensuring that both novice and experienced developers can create high-quality applications."
+                android:textColor="@color/black"
+                android:textSize="14dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="10sp"
+                android:text="Conclusion"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp"
+                android:layout_marginStart="52dp"
+                android:text="Android has significantly impacted the mobile technology landscape through its flexibility, extensive application ecosystem, and seamless integration with Google services. Its open-source nature has fostered innovation and customization, making it a preferred choice for both consumers and developers. As Android continues to evolve, it remains committed to improving performance, security, and user experience, ensuring its position as a leading mobile operating system in an ever-changing technological environment."
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottombar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:background="#A8C3C3">
+
+        <Button
+            android:layout_width="70sp"
+            android:layout_height="wrap_content"
+            android:text="Basics"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"
+            android:onClick="basics"
+            android:layout_marginStart="10sp"
+            android:textSize="8dp"
+            android:backgroundTint="#A8C3C3"
+            android:textColor="@color/black"
+            />
+        <Button
+            android:layout_width="70sp"
+            android:layout_height="wrap_content"
+            android:text=" UI\nWidgets"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"
+            android:onClick="widgets"
+            android:layout_marginStart="90dp"
+            android:textSize="8dp"
+            android:backgroundTint="#A8C3C3"
+            android:textColor="@color/black"
+            />
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:text="Adapters"
+            android:textStyle="bold"
+            android:onClick="adapters"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="175dp"
+            android:textSize="8dp"
+            android:backgroundTint="#A8C3C3"
+            android:textColor="@color/black"
+            />
+        <Button
+            android:layout_width="70sp"
+            android:layout_height="wrap_content"
+            android:text="Bars\nCharts"
+            android:textStyle="bold"
+            android:onClick="barcharts"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="255dp"
+            android:textSize="8dp"
+            android:backgroundTint="#A8C3C3"
+            android:textColor="@color/black"
+            />
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:text="MD\nAnimation"
+            android:onClick="animations"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="335dp"
+            android:textSize="15px"
+            android:backgroundTint="#A8C3C3"
+            android:textColor="@color/black"
+            />
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+</RelativeLayout>

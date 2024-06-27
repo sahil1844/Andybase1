@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    tools:context=".LoginActivity"
+    android:background="#FFFFFF"
+    android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="10sp"
+                android:layout_marginTop="300sp"
+                android:orientation="vertical"
+                android:padding="20sp">
+               <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/email1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    style="@style/MyTheme"
+                    android:hint="Enter Email"
+                    app:hintAnimationEnabled="true"
+                    android:autofillHints="emailAddress"
+                    app:expandedHintEnabled="true"
+                    app:endIconMode="clear_text"
+                    app:helperTextEnabled="false"
+                    app:startIconTint="@color/black"
+                    android:textColorHint="@color/black"
+                    app:hintTextColor="@color/black"
+                    app:helperTextTextColor="@color/black"
+                    app:helperTextTextAppearance="@color/design_default_color_surface"
+                    app:startIconDrawable="@drawable/email">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/Login_Email"
+                        android:textSize="20sp"
+                        android:autofillHints="emailAddress"
+                        android:drawableTint="@color/black"
+                        android:inputType="textEmailAddress"
+                        android:textColor="@color/black"
+                        android:singleLine="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/password1"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10sp"
+                    style="@style/MyTheme"
+                    android:layout_height="wrap_content"
+                    app:startIconTint="@color/black"
+                    app:helperTextTextAppearance="@color/design_default_color_surface"
+                    app:hintTextColor="@color/black"
+                    android:hint="Enter Password"
+                    app:counterEnabled="true"
+                    app:hintTextAppearance="?attr/textAppearanceCaption"
+                    app:counterMaxLength="25"
+                    android:textColorHint="@color/black"
+                    app:helperTextTextColor="@color/black"
+                    app:helperTextEnabled="false"
+                    app:endIconMode="password_toggle"
+                    app:startIconDrawable="@drawable/password">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:autofillHints="password"
+                        android:textSize="20sp"
+                        android:textColor="@color/black"
+                        android:id="@+id/Login_password"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <TextView
+                    android:id="@+id/forgetRedirecttext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="5sp"
+                    android:layout_marginEnd="20sp"
+                    android:text="Forget Password"
+                    android:textColor="#2D2E32"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/Login_btn"
+                    android:layout_width="270dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_gravity="center"
+                    android:text="Login"
+                    android:backgroundTint="#3E4CA6"
+                    android:textSize="18dp"
+                    app:cornerRadius="40dp" />
+
+                <TextView
+                    android:id="@+id/signupRedirecttext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:padding="8dp"
+                    android:text="Not yet Registered? SignUp"
+                    android:textColor="#2D2E32"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

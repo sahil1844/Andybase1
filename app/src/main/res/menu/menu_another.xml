@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:icon="@drawable/more"
+        android:title="more"
+        app:showAsAction="always">
+        <menu>
+            <item android:id="@+id/home"
+                android:iconTint="#FBFAFA"
+                android:icon="@drawable/home"
+                android:onClick="home1"
+                android:title="Home"/>
+            <item android:id="@+id/profile"
+                android:iconTint="#FBFAFA"
+                android:onClick="profile1"
+                android:icon="@drawable/profile"
+                android:title="Profile" />
+            <item android:id="@+id/about"
+                android:onClick="about1"
+                android:iconTint="#FBFAFA"
+                android:icon="@mipmap/about"
+                android:title="About"/>
+            <item android:id="@+id/logout"
+                android:iconTint="#FBFAFA"
+                android:icon="@drawable/logout"
+                android:title="Logout"/>
+        </menu>
+    </item>
+</menu>
