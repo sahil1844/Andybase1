@@ -19,17 +19,13 @@ public class AboutActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
-        imageView = findViewById(R.id.imgv);
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
-
     }
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+    }
+
+    public void aboutimage(View view) {
+        onBackPressed();
     }
 }

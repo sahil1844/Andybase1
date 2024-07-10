@@ -26,6 +26,22 @@ public class CHartsActivity extends AppCompatActivity {
         mediaController.setAnchorView(v1);
         v1.setMediaController(mediaController);
         v1.start();
+
+        v2 = findViewById(R.id.groupbarchart);
+        uri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.groupbar);
+        v2.setVideoURI(uri);
+        mediaController = new MediaController(this);
+        mediaController.setAnchorView(v2);
+        v2.setMediaController(mediaController);
+        v2.start();
+
+        v3 = findViewById(R.id.pointchart);
+        uri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.pointchart);
+        v3.setVideoURI(uri);
+        mediaController = new MediaController(this);
+        mediaController.setAnchorView(v3);
+        v3.setMediaController(mediaController);
+        v3.start();
     }
     @Override
     public void onBackPressed() {

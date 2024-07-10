@@ -29,10 +29,8 @@ public class HomeActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_another,menu);
         return true;
     }
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
         int id = item.getItemId();
         if(id==R.id.home){
             Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show();
@@ -48,12 +46,10 @@ public class HomeActivity extends AppCompatActivity {
         }
         return true;
     }
-
     @Override
     public void onBackPressed() {
         super.onBackPressed();
     }
-
     public void home1(MenuItem item) {onBackPressed();}
     public void profile1(MenuItem item) {
         Intent i = new Intent(this, ProfileActivity.class);

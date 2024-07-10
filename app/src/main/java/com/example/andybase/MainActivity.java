@@ -172,12 +172,18 @@ public class MainActivity extends AppCompatActivity {
         spin5.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                // Get selected item
+
                 String selectedItem = parent.getItemAtPosition(position).toString();
-//                if(selectedItem.equals("Introduction of android")){
-//                    Intent i = new Intent(MainActivity.this, AboutActivity.class);
-//                    startActivity(i);
-//                }
+                switch (position) {
+                    case 1:
+                        Intent i = new Intent(MainActivity.this, MDAndAnimation.class);
+                        startActivity(i);
+                        break;
+                    case 2:
+                        Intent i1 = new Intent(MainActivity.this, Animations.class);
+                        startActivity(i1);
+                        break;
+                }
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {

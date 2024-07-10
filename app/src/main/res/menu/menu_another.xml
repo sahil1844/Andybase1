@@ -10,7 +10,7 @@
                 android:iconTint="#FBFAFA"
                 android:icon="@drawable/home"
                 android:onClick="home1"
-                android:title="Home"/>
+                android:title="Topics"/>
             <item android:id="@+id/profile"
                 android:iconTint="#FBFAFA"
                 android:onClick="profile1"

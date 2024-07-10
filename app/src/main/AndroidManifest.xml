@@ -20,6 +20,12 @@
         android:theme="@style/Theme.AndyBase"
         tools:targetApi="31">
         <activity
+            android:name=".Animations"
+            android:exported="false" />
+        <activity
+            android:name=".MDAndAnimation"
+            android:exported="false" />
+        <activity
             android:name=".CHartsActivity"
             android:exported="false" />
         <activity

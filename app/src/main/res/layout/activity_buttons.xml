@@ -131,9 +131,7 @@
                     android:layout_height="wrap_content"
                     android:onClick="female"
                     android:text="Female"/>
-
             </RadioGroup>
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -141,9 +139,77 @@
                 android:layout_marginTop="10sp"
                 android:text="@string/btn_para4"
                 android:textColor="@color/black"
-                android:layout_marginBottom="@dimen/_50ssp"
+                android:textSize="@dimen/simpletext"/>
+            <TextView
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10sp"
+                android:text="ToggleButton"
+                android:textColor="@color/black"
+                android:textSize="@dimen/headingtext"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10sp"
+                android:text="@string/btn_para5"
+                android:textColor="@color/black"
+                android:textSize="@dimen/simpletext"/>
+            <ToggleButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape"
+                android:layout_gravity="center"
+                android:backgroundTint="#45BFA3"
+                android:layout_marginVertical="@dimen/_10sdp"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                android:textColor="#BC8181"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10sp"
+                android:text="@string/btn_para6"
+                android:textColor="@color/black"
                 android:textSize="@dimen/simpletext"/>
 
+            <TextView
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10sp"
+                android:text="ImageButton"
+                android:textColor="@color/black"
+                android:textSize="@dimen/headingtext"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10sp"
+                android:text="@string/btn_para7"
+                android:textColor="@color/black"
+                android:textSize="@dimen/simpletext"/>
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/youtube"
+                android:id="@+id/imagebtn"
+                android:layout_gravity="center"
+                android:layout_marginVertical="@dimen/_10sdp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10sp"
+                android:text="@string/btn_para8"
+                android:textColor="@color/black"
+                android:textSize="@dimen/simpletext"/>
         </LinearLayout>
     </ScrollView>
 
