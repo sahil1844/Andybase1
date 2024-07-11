@@ -13,7 +13,6 @@ import com.google.android.material.imageview.ShapeableImageView;
 
 public class AboutActivity extends AppCompatActivity {
 
-    ShapeableImageView imageView;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {

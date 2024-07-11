@@ -4,17 +4,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
+<androidx.appcompat.widget.Toolbar
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/toolbar"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
     <ImageView
-        android:layout_width="53dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="1dp"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:paddingEnd="20dp"
         android:onClick="resrawimage"
         android:layout_marginTop="13dp"
-        android:src="@drawable/back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:importantForAccessibility="no" />
+        android:src="@drawable/back" />
 
     <TextView
         android:id="@+id/textView2"
@@ -26,32 +28,32 @@
         android:text=" res/values folder"
         android:textAllCaps="true"
         android:textColor="@color/black"
-        android:textSize="@dimen/_15sdp"
+        android:textSize="@dimen/headingtext"
         android:textStyle="bold"
+        android:paddingEnd="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
+</androidx.appcompat.widget.Toolbar>
     <View
         android:id="@+id/view2"
         android:layout_width="match_parent"
         android:layout_height="5dp"
         android:background="#737070"
-        android:layout_marginTop="@dimen/_10sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView2"/>
+        app:layout_constraintTop_toBottomOf="@id/toolbar"/>
 
     <ScrollView
         android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_140sdp"
+        android:layout_marginTop="@dimen/_150sdp"
         android:layout_marginBottom="@dimen/_50sdp"
         android:scrollbars="vertical"
         app:layout_constraintBottom_toTopOf="@id/bottombar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/view2">
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -181,7 +183,7 @@
                 android:layout_marginTop="5dp"
                 android:textColor="@color/black"
                 android:layout_marginHorizontal="@dimen/_90sdp"
-                android:layout_marginBottom="@dimen/_90sdp" />
+                android:layout_marginBottom="@dimen/_110sdp" />
         </LinearLayout>
     </ScrollView>
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -258,5 +260,4 @@
                 android:textColor="@color/black" />
         </LinearLayout>
     </com.google.android.material.bottomnavigation.BottomNavigationView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

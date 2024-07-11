@@ -108,7 +108,4 @@ public class NavigationDrawerEx extends AppCompatActivity implements
             drawerLayout.closeDrawers();
         }
     }
-    public void navigationimage(View view) {
-        onBackPressed();
-    }
 }

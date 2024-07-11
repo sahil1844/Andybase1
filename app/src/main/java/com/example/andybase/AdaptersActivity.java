@@ -15,6 +15,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.MediaController;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.VideoView;
 
@@ -32,6 +33,14 @@ public class AdaptersActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adapters);
+
+        ScrollView scrollView = findViewById(R.id.view);
+        scrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.scrollTo(0, 0);
+            }
+        });
 
         adapterViewFlipper = findViewById(R.id.viewflipper);
         CustomAdapter adapter = new CustomAdapter(getApplicationContext(), images,names);

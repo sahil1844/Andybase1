@@ -132,6 +132,9 @@ public class MainActivity extends AppCompatActivity {
                 String selectedItem = parent.getItemAtPosition(position).toString();
                 switch (position) {
                     case 1:
+                    case 2:
+                    case 3:
+                    case 4:
                         Intent i = new Intent(MainActivity.this, AdaptersActivity.class);
                         startActivity(i);
                         break;

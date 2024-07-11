@@ -5,16 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".StructuresActivity">
-
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/structImage"
         android:layout_width="53dp"
         android:layout_height="34dp"
         android:layout_marginStart="1dp"
         android:layout_marginTop="13dp"
-        android:src="@drawable/back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:src="@drawable/back" />
 
     <TextView
         android:id="@+id/textView2"
@@ -30,29 +33,27 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
+    </androidx.appcompat.widget.Toolbar>
     <View
         android:id="@+id/view2"
         android:layout_width="match_parent"
         android:layout_height="5dp"
         android:background="#737070"
-        android:layout_marginTop="@dimen/_40sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
     <ScrollView
         android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_120sdp"
+        android:layout_marginTop="@dimen/_100sdp"
         android:layout_marginBottom="@dimen/_50sdp"
         android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/view2"
-        app:layout_constraintVertical_bias="0.582">
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -63,7 +64,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
-                android:layout_marginTop="10sp"
+                android:layout_marginTop="5sp"
                 android:text="Android Project folder Structure"
                 android:textColor="@color/black"
                 android:textSize="18dp"
@@ -315,9 +316,82 @@
                 android:onClick="appfileStructure"
                 android:textColor="@color/black"
                 android:layout_marginHorizontal="@dimen/_70sdp"
-                android:layout_marginBottom="@dimen/_45sdp"
+                android:layout_marginBottom="@dimen/_90sdp"
                 />
         </LinearLayout>
     </ScrollView>
-
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottombar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_gravity="bottom"
+        android:background="#A8C3C3">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="80sp"
+                android:layout_height="match_parent"
+                android:textStyle="bold"
+                android:text="Basics"
+                android:paddingTop="10dp"
+                android:layout_weight="1"
+                android:drawableTop="@mipmap/basics"
+                android:gravity="center"
+                android:textSize="@dimen/_8ssp"
+                android:backgroundTint="#A8C3C3"
+                android:textColor="@color/black" />
+            <TextView
+                android:layout_width="70sp"
+                android:layout_height="match_parent"
+                android:paddingTop="10dp"
+                android:drawableTop="@mipmap/uiwidget"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="widgets"
+                android:layout_weight="1"
+                android:textSize="@dimen/_8ssp"
+                android:backgroundTint="#A8C3C3"
+                android:textColor="@color/black" />
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingTop="10dp"
+                android:drawableTop="@mipmap/adapter"
+                android:textStyle="bold"
+                android:text="Adpaters"
+                android:gravity="center"
+                android:textSize="@dimen/_8ssp"
+                android:backgroundTint="#A8C3C3"
+                android:textColor="@color/black" />
+            <TextView
+                android:layout_width="70sp"
+                android:layout_height="match_parent"
+                android:paddingTop="10dp"
+                android:drawableTop="@mipmap/charts"
+                android:textStyle="bold"
+                android:text="Charts"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="@dimen/_8ssp"
+                android:backgroundTint="#A8C3C3"
+                android:textColor="@color/black" />
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:paddingTop="10dp"
+                android:drawableTop="@mipmap/animation"
+                android:text="Animation"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="@dimen/_8ssp"
+                android:backgroundTint="#A8C3C3"
+                android:textColor="@color/black" />
+        </LinearLayout>
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 </androidx.constraintlayout.widget.ConstraintLayout>
