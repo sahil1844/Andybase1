@@ -149,7 +149,7 @@
                 android:text="Basics"
                 android:paddingTop="10dp"
                 android:layout_weight="1"
-                android:drawableTop="@mipmap/basics"
+                android:drawableTop="@mipmap/unfillbasic"
                 android:gravity="center"
                 android:textSize="@dimen/_8ssp"
                 android:backgroundTint="#A8C3C3"
@@ -158,7 +158,7 @@
                 android:layout_width="70sp"
                 android:layout_height="match_parent"
                 android:paddingTop="10dp"
-                android:drawableTop="@mipmap/uiwidget"
+                android:drawableTop="@mipmap/unfillwidget"
                 android:textStyle="bold"
                 android:gravity="center"
                 android:text="widgets"
@@ -171,7 +171,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:paddingTop="10dp"
-                android:drawableTop="@mipmap/adapter"
+                android:drawableTop="@mipmap/unfilladapter"
                 android:textStyle="bold"
                 android:text="Adpaters"
                 android:gravity="center"
@@ -182,7 +182,7 @@
                 android:layout_width="70sp"
                 android:layout_height="match_parent"
                 android:paddingTop="10dp"
-                android:drawableTop="@mipmap/charts"
+                android:drawableTop="@mipmap/unfillcharts"
                 android:textStyle="bold"
                 android:text="Charts"
                 android:layout_weight="1"
@@ -194,7 +194,7 @@
                 android:layout_width="70dp"
                 android:layout_height="match_parent"
                 android:paddingTop="10dp"
-                android:drawableTop="@mipmap/animation"
+                android:drawableTop="@mipmap/unfillanimation"
                 android:text="Animation"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -204,5 +204,4 @@
                 android:textColor="@color/black" />
         </LinearLayout>
     </com.google.android.material.bottomnavigation.BottomNavigationView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

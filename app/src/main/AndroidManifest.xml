@@ -20,6 +20,21 @@
         android:theme="@style/Theme.AndyBase"
         tools:targetApi="31">
         <activity
+            android:name=".ManifestFile"
+            android:exported="false" />
+        <activity
+            android:name=".ContextTypes"
+            android:exported="false" />
+        <activity
+            android:name=".ResrawAsset"
+            android:exported="false" />
+        <activity
+            android:name=".AssetsFolder"
+            android:exported="false" />
+        <activity
+            android:name=".AllLayouts"
+            android:exported="false" />
+        <activity
             android:name=".Animations"
             android:exported="false" />
         <activity

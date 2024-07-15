@@ -9,16 +9,16 @@
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/toolbar">
+        android:id="@+id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
     <com.google.android.material.imageview.ShapeableImageView
         android:layout_width="53dp"
         android:layout_height="34dp"
         android:layout_marginStart="1dp"
         android:onClick="Animimage"
         android:layout_marginTop="13dp"
-        android:src="@drawable/back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:src="@drawable/back"/>
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textView2"
@@ -115,7 +115,7 @@
                 android:text="Basics"
                 android:paddingTop="10dp"
                 android:layout_weight="1"
-                android:drawableTop="@mipmap/basics"
+                android:drawableTop="@mipmap/unfillbasic"
                 android:gravity="center"
                 android:textSize="@dimen/_8ssp"
                 android:backgroundTint="#A8C3C3"
@@ -124,7 +124,7 @@
                 android:layout_width="70sp"
                 android:layout_height="match_parent"
                 android:paddingTop="10dp"
-                android:drawableTop="@mipmap/uiwidget"
+                android:drawableTop="@mipmap/unfillwidget"
                 android:textStyle="bold"
                 android:gravity="center"
                 android:text="widgets"
@@ -137,7 +137,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:paddingTop="10dp"
-                android:drawableTop="@mipmap/adapter"
+                android:drawableTop="@mipmap/unfilladapter"
                 android:textStyle="bold"
                 android:text="Adpaters"
                 android:gravity="center"
@@ -148,7 +148,7 @@
                 android:layout_width="70sp"
                 android:layout_height="match_parent"
                 android:paddingTop="10dp"
-                android:drawableTop="@mipmap/charts"
+                android:drawableTop="@mipmap/unfillcharts"
                 android:textStyle="bold"
                 android:text="Charts"
                 android:layout_weight="1"
@@ -160,7 +160,7 @@
                 android:layout_width="70dp"
                 android:layout_height="match_parent"
                 android:paddingTop="10dp"
-                android:drawableTop="@mipmap/animation"
+                android:drawableTop="@mipmap/unfillanimation"
                 android:text="Animation"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -170,5 +170,4 @@
                 android:textColor="@color/black" />
         </LinearLayout>
     </com.google.android.material.bottomnavigation.BottomNavigationView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

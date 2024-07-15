@@ -15,7 +15,7 @@
     <com.google.android.material.imageview.ShapeableImageView
         android:layout_width="53dp"
         android:layout_height="34dp"
-        android:layout_marginStart="1dp"
+        android:paddingEnd="10dp"
         android:onClick="appfileImage"
         android:layout_marginTop="13dp"
         android:src="@drawable/back" />
@@ -29,8 +29,9 @@
         android:gravity="center"
         android:text="Application File Structure"
         android:textAllCaps="true"
+        android:paddingEnd="40dp"
         android:textColor="@color/black"
-        android:textSize="@dimen/_15sdp"
+        android:textSize="@dimen/headingtext"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -279,18 +280,9 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="10sp"
                 android:text="@string/appfile_para16"
+                android:layout_marginBottom="110dp"
                 android:textColor="@color/black"
                 android:textSize="14dp"/>
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Manifest File Structure"
-                android:textSize="@dimen/_8ssp"
-                android:layout_gravity="end"
-                android:onClick="manifestfile"
-                android:textColor="@color/black"
-                android:layout_marginHorizontal="@dimen/_70sdp"
-                android:layout_marginBottom="110dp" />
         </LinearLayout>
     </ScrollView>
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -312,7 +304,7 @@
                 android:text="Basics"
                 android:paddingTop="10dp"
                 android:layout_weight="1"
-                android:drawableTop="@mipmap/basics"
+                android:drawableTop="@mipmap/unfillbasic"
                 android:gravity="center"
                 android:textSize="@dimen/_8ssp"
                 android:backgroundTint="#A8C3C3"
@@ -321,7 +313,7 @@
                 android:layout_width="70sp"
                 android:layout_height="match_parent"
                 android:paddingTop="10dp"
-                android:drawableTop="@mipmap/uiwidget"
+                android:drawableTop="@mipmap/unfillwidget"
                 android:textStyle="bold"
                 android:gravity="center"
                 android:text="widgets"
@@ -334,7 +326,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:paddingTop="10dp"
-                android:drawableTop="@mipmap/adapter"
+                android:drawableTop="@mipmap/unfilladapter"
                 android:textStyle="bold"
                 android:text="Adpaters"
                 android:gravity="center"
@@ -345,7 +337,7 @@
                 android:layout_width="70sp"
                 android:layout_height="match_parent"
                 android:paddingTop="10dp"
-                android:drawableTop="@mipmap/charts"
+                android:drawableTop="@mipmap/unfillcharts"
                 android:textStyle="bold"
                 android:text="Charts"
                 android:layout_weight="1"
@@ -357,7 +349,7 @@
                 android:layout_width="70dp"
                 android:layout_height="match_parent"
                 android:paddingTop="10dp"
-                android:drawableTop="@mipmap/animation"
+                android:drawableTop="@mipmap/unfillanimation"
                 android:text="Animation"
                 android:layout_weight="1"
                 android:gravity="center"

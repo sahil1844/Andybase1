@@ -30,8 +30,7 @@ public class StructuresActivity extends AppCompatActivity {
     }
 
     public void appfileStructure(View view) {
-        Intent i = new Intent(StructuresActivity.this, appFileStructure.class);
-        i.putExtra("id","0");
+        Intent i = new Intent(StructuresActivity.this, ManifestFile.class);
         startActivity(i);
     }
 }

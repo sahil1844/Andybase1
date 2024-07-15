@@ -11,14 +11,6 @@ public class ActivityLifecycle extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lifecycle);
-        String id = getIntent().getStringExtra("id");
-        assert id != null;
-        if(id.equals("1")){
-            setContentView(R.layout.contexttypes);
-        }
-        else {
-            setContentView(R.layout.activity_lifecycle);
-        }
 //        Toast.makeText(getApplicationContext(), "onCreate Called", Toast.LENGTH_LONG).show();
     }
     protected void onStart() {
@@ -51,11 +43,6 @@ public class ActivityLifecycle extends AppCompatActivity {
         super.onDestroy();
 //        Toast.makeText(getApplicationContext(), "onDestroy Called", Toast.LENGTH_LONG).show();
     }
-
-    public void contextimage(View view) {
-        onBackPressed();
-    }
-
     @Override
     public void onBackPressed() {
         super.onBackPressed();

@@ -1,38 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-
+    tools:context=".AssetsFolder">
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/toolbar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-    <com.google.android.material.imageview.ShapeableImageView
-        android:layout_width="53dp"
-        android:layout_height="34dp"
-        android:paddingEnd="20dp"
-        android:onClick="assetimage"
-        android:layout_marginTop="13dp"
-        android:src="@drawable/back" />
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="53dp"
+            android:layout_height="34dp"
+            android:paddingEnd="10dp"
+            android:onClick="assetimage"
+            android:layout_marginTop="13dp"
+            android:src="@drawable/back" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="14dp"
-        android:paddingEnd="50dp"
-        android:gravity="center"
-        android:text="Assets Folder"
-        android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textSize="@dimen/_15sdp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="14dp"
+            android:paddingEnd="50dp"
+            android:gravity="center"
+            android:text="Assets Folder"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/headingtext"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.appcompat.widget.Toolbar>
     <View
         android:id="@+id/view2"
@@ -451,7 +453,7 @@
                 android:text="Basics"
                 android:paddingTop="10dp"
                 android:layout_weight="1"
-                android:drawableTop="@mipmap/basics"
+                android:drawableTop="@mipmap/unfillbasic"
                 android:gravity="center"
                 android:textSize="@dimen/_8ssp"
                 android:backgroundTint="#A8C3C3"
@@ -460,7 +462,7 @@
                 android:layout_width="70sp"
                 android:layout_height="match_parent"
                 android:paddingTop="10dp"
-                android:drawableTop="@mipmap/uiwidget"
+                android:drawableTop="@mipmap/unfillwidget"
                 android:textStyle="bold"
                 android:gravity="center"
                 android:text="widgets"
@@ -473,7 +475,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:paddingTop="10dp"
-                android:drawableTop="@mipmap/adapter"
+                android:drawableTop="@mipmap/unfilladapter"
                 android:textStyle="bold"
                 android:text="Adpaters"
                 android:gravity="center"
@@ -484,7 +486,7 @@
                 android:layout_width="70sp"
                 android:layout_height="match_parent"
                 android:paddingTop="10dp"
-                android:drawableTop="@mipmap/charts"
+                android:drawableTop="@mipmap/unfillcharts"
                 android:textStyle="bold"
                 android:text="Charts"
                 android:layout_weight="1"
@@ -496,7 +498,7 @@
                 android:layout_width="70dp"
                 android:layout_height="match_parent"
                 android:paddingTop="10dp"
-                android:drawableTop="@mipmap/animation"
+                android:drawableTop="@mipmap/unfillanimation"
                 android:text="Animation"
                 android:layout_weight="1"
                 android:gravity="center"

@@ -247,6 +247,7 @@
         <item>Introduction of android</item>
         <item>History Of Android</item>
         <item>Android Architecture</item>
+        <item>Application File Structure</item>
         <item>Folder/File Structure,Manifest</item>
         <item>Res/Values, Assets Folder</item>
         <item>Activity LifeCycle/Activity State Changes</item>

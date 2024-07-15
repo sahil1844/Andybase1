@@ -33,17 +33,16 @@ public class LayoutsActivity extends AppCompatActivity {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                // Get selected item
                 String selectedItem = parent.getItemAtPosition(position).toString();
                 switch (position){
                     case 1:
-                        setContentView(R.layout.alllayouts);
-                        break;
-                    case 2:
-                        Intent i = new Intent(LayoutsActivity.this, NavigationDrawerEx.class);
+                        Intent i = new Intent(LayoutsActivity.this, AllLayouts.class);
                         startActivity(i);
                         break;
-
+                    case 2:
+                        Intent i1 = new Intent(LayoutsActivity.this, NavigationDrawerEx.class);
+                        startActivity(i1);
+                        break;
                 }
         }
         @Override
@@ -116,10 +115,5 @@ public class LayoutsActivity extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
     }
-
     public void layoutback(View view) {onBackPressed(); }
-
-    public void layoutssimage(View view) {
-        onBackPressed();
-    }
 }

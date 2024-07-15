@@ -46,7 +46,7 @@ public class NavigationDrawerEx extends AppCompatActivity implements
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
                 if(id == R.id.nav_home) {
-                    setContentView(R.layout.navigationdrawerfile);
+                    Toast.makeText(NavigationDrawerEx.this, "Clicked Home!!!", Toast.LENGTH_SHORT).show();
                 }
                 if(id == R.id.attend_track) {
                     Toast.makeText(NavigationDrawerEx.this, "Clicked Attendance Track!!!", Toast.LENGTH_SHORT).show();

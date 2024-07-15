@@ -9,6 +9,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -24,25 +25,29 @@ import android.widget.Toast;
 import com.google.android.material.imageview.ShapeableImageView;
 
 public class MainActivity extends AppCompatActivity {
-    String username;
+    String username,item;
     Spinner spinner,spin2,spin3,spin4,spin5;
+    TextView Header;
     @SuppressLint({"MissingInflatedId", "ResourceType"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         spinner = findViewById(R.id.spinner1);
         spin2 = findViewById(R.id.spinner2);
         spin3 = findViewById(R.id.spinner3);
         spin4 = findViewById(R.id.spinner4);
         spin5 = findViewById(R.id.spinner5);
         ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setTitle("");
-        }
+        if (actionBar != null) { actionBar.setTitle(""); }
         Intent i = getIntent();
         username = i.getStringExtra("mainem");
+
+        Header = findViewById(R.id.Header);
+        item = i.getStringExtra("item");
+        if(item != null) {
+            Header.setText(item);
+        }
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.spinner_items, android.R.layout.simple_spinner_dropdown_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -51,18 +56,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String selectedItem = parent.getItemAtPosition(position).toString();
-                if(selectedItem.equals("Res/Values, Assets Folder")){
-                    Intent i = new Intent(MainActivity.this, appFileStructure.class);
-                    i.putExtra("id","1");
-                    startActivity(i);
-                    finish();
-                }
-                if(selectedItem.equals("What is Context with example")){
-                    Intent i = new Intent(MainActivity.this, ActivityLifecycle.class);
-                    i.putExtra("id","1");
-                    startActivity(i);
-                    finish();
-                }
 
                 switch (position) {
                     case 1:
@@ -78,27 +71,35 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(i2);
                         break;
                     case 4:
-                        Intent i3 = new Intent(MainActivity.this, StructuresActivity.class);
+                        Intent i3 = new Intent(MainActivity.this, appFileStructure.class);
                         startActivity(i3);
-                        finish();
+                        break;
+                    case 5:
+                        Intent i6 = new Intent(MainActivity.this, StructuresActivity.class);
+                        startActivity(i6);
                         break;
                     case 6:
-                        Intent i4 = new Intent(MainActivity.this, ActivityLifecycle.class);
-                        i4.putExtra("id","0");
+                        Intent i4 = new Intent(MainActivity.this, ResrawAsset.class);
                         startActivity(i4);
-                        finish();
+                        break;
+                    case 7:
+                        Intent i7 = new Intent(MainActivity.this, ActivityLifecycle.class);
+                        startActivity(i7);
                         break;
                     case 8:
-                        Intent i5 = new Intent(MainActivity.this, BundleActivity.class);
+                        Intent i5 = new Intent(MainActivity.this, ContextTypes.class);
                         startActivity(i5);
-                        finish();
+                        break;
+                    case 9:
+                        Intent i8 = new Intent(MainActivity.this, BundleActivity.class);
+                        startActivity(i8);
                         break;
                 }
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
             }
-        });
+        } );
 
         ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this, R.array.spinner_items1, android.R.layout.simple_spinner_dropdown_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -120,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
             }
-        });
+        } );
 
         ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this, R.array.spinner_items2, android.R.layout.simple_spinner_dropdown_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -143,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
             }
-        });
+        } );
 
         ArrayAdapter<CharSequence> adapter3 = ArrayAdapter.createFromResource(this, R.array.spinner_items3, android.R.layout.simple_spinner_dropdown_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -167,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
             }
-        });
+        } );
 
         ArrayAdapter<CharSequence> adapter4 = ArrayAdapter.createFromResource(this, R.array.spinner_items4, android.R.layout.simple_spinner_dropdown_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -191,7 +192,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
             }
-        });
+        } );
     }
     @Override
     public void onBackPressed() {
