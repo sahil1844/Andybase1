@@ -7,10 +7,12 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.MediaController;
+import android.widget.ScrollView;
 import android.widget.VideoView;
 
 public class BarsActivity extends AppCompatActivity {
 
+    ScrollView scrollView;
     VideoView v1,v2,v3,v4,v5,v6,v7;
     Uri uri;
     MediaController mediaController;
@@ -20,6 +22,13 @@ public class BarsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bars);
 
+        scrollView = findViewById(R.id.view);
+        scrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.scrollTo(0, 0);
+            }
+        });
         v1 = findViewById(R.id.actionbar);
         uri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.actionbar);
         v1.setVideoURI(uri);
@@ -83,5 +92,68 @@ public class BarsActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+    }
+
+    public void actbar(View view) {
+        scrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.scrollTo(0, 0);
+            }
+        });
+    }
+
+    public void toolbar(View view) {
+        scrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.scrollTo(0, 5080);
+            }
+        });
+    }
+
+    public void seekbar(View view) {
+        scrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.scrollTo(0, 9520);
+            }
+        });
+    }
+
+    public void diseekbar(View view) {
+        scrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.scrollTo(0, 13370);
+            }
+        });
+    }
+
+    public void ratingbar(View view) {
+        scrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.scrollTo(0, 16500);
+            }
+        });
+    }
+
+    public void snackbar(View view) {
+        scrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.scrollTo(0, 20610);
+            }
+        });
+    }
+
+    public void rseekbar(View view) {
+        scrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.scrollTo(0, 26590);
+            }
+        });
     }
 }

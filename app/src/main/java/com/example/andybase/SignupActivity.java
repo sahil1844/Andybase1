@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.example.andybase.databinding.ActivitySignupBinding;
 
+import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -32,6 +33,47 @@ public class SignupActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         helper = new DBHelper(this);
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+
+        binding.signupFname.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (Objects.equals(binding.signupFname.getText(), "")) {
+                    binding.firstname.setHelperTextEnabled(true);
+                    binding.firstname.setHelperText("*Enter Your First Name*");
+                    binding.firstname.setHelperTextColor(ColorStateList.valueOf(Color.RED));
+                } else {
+                    binding.firstname.setHelperTextEnabled(false);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
+
+        binding.signupLname.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (Objects.equals(binding.signupLname.getText(), "")) {
+                    binding.lastname.setHelperTextEnabled(true);
+                    binding.lastname.setHelperText("*Enter Your Last Name*");
+                    binding.lastname.setHelperTextColor(ColorStateList.valueOf(Color.RED));
+                } else {
+                    binding.lastname.setHelperTextEnabled(false);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
+
         binding.signupPassword.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -78,20 +120,35 @@ public class SignupActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 imm.hideSoftInputFromWindow(getWindow().getDecorView().getWindowToken(), 0);
+                String fname = binding.signupFname.getText().toString();
+                String lname = binding.signupLname.getText().toString();
                 String email = binding.signupEmail.getText().toString();
                 String pass = binding.signupPassword.getText().toString();
                 String cpass = binding.signupCpassword.getText().toString();
 
-                if(email.equals("") && pass.equals("") && cpass.equals("")){
+                if(fname.equals("") && lname.equals("") && email.equals("") && pass.equals("") && cpass.equals("")){
+                    binding.firstname.setHelperTextEnabled(true);
+                    binding.lastname.setHelperTextEnabled(true);
                     binding.email1.setHelperTextEnabled(true);
                     binding.password1.setHelperTextEnabled(true);
                     binding.password2.setHelperTextEnabled(true);
+                    binding.firstname.setHelperText("*Enter Your First Name*");
+                    binding.lastname.setHelperText("*Enter Your Last Name*");
                     binding.email1.setHelperText("*Enter A Valid Email*");
                     binding.password1.setHelperText("*Enter password atleast 8 Character have like this 1,$,S,s*");
                     binding.password2.setHelperText("*Enter password as before entered!!*");
+                    binding.firstname.setHelperTextColor(ColorStateList.valueOf(Color.RED));
+                    binding.lastname.setHelperTextColor(ColorStateList.valueOf(Color.RED));
                     binding.email1.setHelperTextColor(ColorStateList.valueOf(Color.RED));
                     binding.password1.setHelperTextColor(ColorStateList.valueOf(Color.RED));
                     binding.password2.setHelperTextColor(ColorStateList.valueOf(Color.RED));
+                }else if(fname.equals("") && lname.equals("")){
+                    binding.firstname.setHelperTextEnabled(true);
+                    binding.lastname.setHelperTextEnabled(true);
+                    binding.firstname.setHelperText("*Enter Your First Name");
+                    binding.lastname.setHelperText("*Enter Your Last Name");
+                    binding.firstname.setHelperTextColor(ColorStateList.valueOf(Color.RED));
+                    binding.lastname.setHelperTextColor(ColorStateList.valueOf(Color.RED));
                 }else if(email.equals("") && pass.equals("")) {
                     binding.email1.setHelperTextEnabled(true);
                     binding.password1.setHelperTextEnabled(true);
@@ -131,7 +188,7 @@ public class SignupActivity extends AppCompatActivity {
                                 Toast.makeText(SignupActivity.this, "User Already Exists, Please Login!!", Toast.LENGTH_SHORT).show();
                             } else {
                                 imm.hideSoftInputFromWindow(getWindow().getDecorView().getWindowToken(), 0);
-                                Boolean insertData = helper.insertData(email, pass);
+                                Boolean insertData = helper.insertData(fname,lname,email, pass);
                                 Toast.makeText(SignupActivity.this, "SignUp Successfully!!", Toast.LENGTH_SHORT).show();
                                 Intent i = new Intent(SignupActivity.this, LoginActivity.class);
                                 startActivity(i);

@@ -152,25 +152,23 @@
         android:id="@+id/bottombar"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
+       android:layout_alignParentBottom="true"
         android:layout_gravity="bottom"
         android:background="#A8C3C3">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
             <TextView
                 android:id="@+id/navigation_basics"
                 android:layout_width="80sp"
                 android:layout_height="match_parent"
                 android:textStyle="bold"
                 android:text="Basics"
+                android:onClick="basics"
                 android:paddingTop="10dp"
                 android:layout_weight="1"
-                android:drawableTop="@mipmap/basics"
-                android:onClick="basics"
+                android:drawableTop="@mipmap/unfillbasic"
                 android:gravity="center"
                 android:textSize="@dimen/_8ssp"
                 android:backgroundTint="#A8C3C3"
@@ -180,26 +178,26 @@
                 android:layout_width="70sp"
                 android:layout_height="match_parent"
                 android:paddingTop="10dp"
-                android:drawableTop="@mipmap/uiwidget"
+                android:drawableTop="@mipmap/unfillwidget"
                 android:textStyle="bold"
+                android:onClick="widgets"
                 android:gravity="center"
                 android:text="widgets"
                 android:layout_weight="1"
-                android:onClick="widgets"
                 android:textSize="@dimen/_8ssp"
                 android:backgroundTint="#A8C3C3"
                 android:textColor="@color/black" />
             <TextView
-                android:id="@+id/navigation_adapter"
+                android:id="@+id/navigation_adpater"
                 android:layout_width="70dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:paddingTop="10dp"
-                android:drawableTop="@mipmap/adapter"
+                android:drawableTop="@mipmap/unfilladapter"
+                android:onClick="adapters"
                 android:textStyle="bold"
                 android:text="Adpaters"
                 android:gravity="center"
-                android:onClick="adapters"
                 android:textSize="@dimen/_8ssp"
                 android:backgroundTint="#A8C3C3"
                 android:textColor="@color/black" />
@@ -208,10 +206,10 @@
                 android:layout_width="70sp"
                 android:layout_height="match_parent"
                 android:paddingTop="10dp"
-                android:drawableTop="@mipmap/charts"
+                android:drawableTop="@mipmap/unfillcharts"
                 android:textStyle="bold"
-                android:text="Charts"
                 android:onClick="barcharts"
+                android:text="Charts"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:textSize="@dimen/_8ssp"
@@ -222,7 +220,7 @@
                 android:layout_width="70dp"
                 android:layout_height="match_parent"
                 android:paddingTop="10dp"
-                android:drawableTop="@mipmap/animation"
+                android:drawableTop="@mipmap/unfillanimation"
                 android:onClick="animations"
                 android:text="Animation"
                 android:layout_weight="1"
@@ -231,6 +229,6 @@
                 android:textSize="@dimen/_8ssp"
                 android:backgroundTint="#A8C3C3"
                 android:textColor="@color/black" />
-    </LinearLayout>
+        </LinearLayout>
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 </RelativeLayout>

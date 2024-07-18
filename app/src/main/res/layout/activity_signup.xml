@@ -12,21 +12,83 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_80sdp"
+            android:src="@mipmap/logo"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:orientation="vertical"
             android:layout_marginStart="10sp"
-            android:layout_marginTop="280sp"
             android:padding="20sp">
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/firstname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/MyTheme"
+                android:layout_marginTop="16dp"
+                android:hint="Enter First Name"
+                app:hintAnimationEnabled="true"
+                android:autofillHints="username"
+                app:expandedHintEnabled="true"
+                app:endIconMode="clear_text"
+                app:startIconTint="@color/black"
+                app:helperTextEnabled="false"
+                android:textColorHint="@color/black"
+                app:hintTextColor="@color/black"
+                app:helperTextTextColor="@color/black"
+                app:helperTextTextAppearance="@color/design_default_color_surface"
+                app:startIconDrawable="@mipmap/person">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/signup_fname"
+                    android:textSize="20sp"
+                    android:drawableTint="@color/black"
+                    android:inputType="textPersonName"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lastname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/MyTheme"
+                android:layout_marginTop="16dp"
+                android:hint="Enter Last Name"
+                app:hintAnimationEnabled="true"
+                android:autofillHints="username"
+                app:expandedHintEnabled="true"
+                app:endIconMode="clear_text"
+                app:startIconTint="@color/black"
+                app:helperTextEnabled="false"
+                android:textColorHint="@color/black"
+                app:hintTextColor="@color/black"
+                app:helperTextTextColor="@color/black"
+                app:helperTextTextAppearance="@color/design_default_color_surface"
+                app:startIconDrawable="@mipmap/person">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/signup_lname"
+                    android:textSize="20sp"
+                    android:drawableTint="@color/black"
+                    android:inputType="textPersonName"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/email1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/MyTheme"
                 android:layout_marginTop="16dp"
-                android:hint="Enter Email"
+                android:hint="Enter Email Address"
                 app:hintAnimationEnabled="true"
                 android:autofillHints="emailAddress"
                 app:expandedHintEnabled="true"
@@ -114,8 +176,7 @@
                 android:textSize="18dp"
                 android:textStyle="bold"
                 android:layout_marginTop="8dp"
-                android:textColor="#2D2E32"
-                />
+                android:textColor="#2D2E32" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

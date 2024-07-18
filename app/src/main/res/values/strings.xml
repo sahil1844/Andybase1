@@ -248,7 +248,8 @@
         <item>History Of Android</item>
         <item>Android Architecture</item>
         <item>Application File Structure</item>
-        <item>Folder/File Structure,Manifest</item>
+        <item>Folder/File Structure</item>
+        <item>Manifest File Structure</item>
         <item>Res/Values, Assets Folder</item>
         <item>Activity LifeCycle/Activity State Changes</item>
         <item>What is Context with example</item>
@@ -274,7 +275,7 @@
     </string-array>
     <string-array name="spinner_items7">
         <item>Select Topic</item>
-        <item>RadioButton,RadioGroup,ToggleButton,ImageButton</item>
+        <item>Button,RadioButton,RadioGroup,ToggleButton,ImageButton</item>
         <item>Progress\Loading Button, Floating Action Button</item>
     </string-array>
     <string-array name="spinner_items2">

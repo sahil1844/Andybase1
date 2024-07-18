@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Handler;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,11 +18,13 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.MediaController;
 import android.widget.ProgressBar;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.VideoView;
 
 public class ProgressLoadingActivity extends AppCompatActivity {
 
+    ScrollView scrollView;
     Button button, button2, button3, button4;
     Dialog dialog;
     @Override
@@ -29,6 +32,13 @@ public class ProgressLoadingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_progress_loading);
 
+        scrollView = findViewById(R.id.view);
+        scrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.scrollTo(0, 0);
+            }
+        });
         VideoView videoView = findViewById(R.id.vv);
         Uri uri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.floatingbtn);
         videoView.setVideoURI(uri);
@@ -50,7 +60,7 @@ public class ProgressLoadingActivity extends AppCompatActivity {
                 dialog.setContentView(R.layout.progress_bar_1);
                 dialog.setCanceledOnTouchOutside(false);
                 dialog.show();
-                new CountDownTimer(8000, 3000) {
+                new CountDownTimer(2000, 2000) {
                     @Override
                     public void onTick(long l)
                     {
@@ -73,7 +83,7 @@ public class ProgressLoadingActivity extends AppCompatActivity {
                 dialog.setCanceledOnTouchOutside(false);
                 dialog.show();
 
-                new CountDownTimer(8000, 3000) {
+                new CountDownTimer(2000, 2000) {
                     @Override
                     public void onTick(long l)
                     {
@@ -95,7 +105,7 @@ public class ProgressLoadingActivity extends AppCompatActivity {
                 dialog.setContentView(R.layout.progress_bar_3);
                 dialog.setCanceledOnTouchOutside(false);
                 dialog.show();
-                new CountDownTimer(8000, 3000) {
+                new CountDownTimer(2000, 2000) {
                     @Override
                     public void onTick(long l)
                     {
@@ -117,7 +127,7 @@ public class ProgressLoadingActivity extends AppCompatActivity {
                 dialog.setContentView(R.layout.progress_bar_4);
                 dialog.setCanceledOnTouchOutside(false);
                 dialog.show();
-                new CountDownTimer(8000, 3000) {
+                new CountDownTimer(2000, 2000) {
                     @Override
                     public void onTick(long l)
                     {
@@ -187,6 +197,7 @@ public class ProgressLoadingActivity extends AppCompatActivity {
             // Disabling screen touch to avoid exiting the Dialog
             window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
         }
+        new Handler().postDelayed(dialog::dismiss, 2000);
     }
 
     public void prgimage(View view) {
@@ -196,5 +207,23 @@ public class ProgressLoadingActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+    }
+
+    public void probtn(View view) {
+        scrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.scrollTo(0, 0);
+            }
+        });
+    }
+
+    public void flobtn(View view) {
+        scrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.scrollTo(0, 8640);
+            }
+        });
     }
 }

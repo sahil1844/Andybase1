@@ -34,4 +34,31 @@ public class MDAndAnimation extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
     }
+
+    public void medittxt(View view) {
+        scrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.scrollTo(0, 0);
+            }
+        });
+    }
+
+    public void mbtn(View view) {
+        scrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.scrollTo(0, 5600);
+            }
+        });
+    }
+
+    public void mdatepic(View view) {
+        scrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.scrollTo(0, 12900);
+            }
+        });
+    }
 }

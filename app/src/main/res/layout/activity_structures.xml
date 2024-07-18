@@ -304,21 +304,11 @@
                 android:id="@+id/imggradle"
                 android:layout_width="@dimen/_200sdp"
                 android:layout_height="@dimen/_120sdp"
-                android:layout_marginVertical="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_100sdp"
                 android:layout_gravity="center"
                 android:src="@mipmap/gradlefolder" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Manifest File Structure"
-                android:textSize="@dimen/_8ssp"
-                android:layout_gravity="end"
-                android:onClick="appfileStructure"
-                android:textColor="@color/black"
-                android:layout_marginHorizontal="@dimen/_70sdp"
-                android:layout_marginBottom="@dimen/_90sdp"
-                />
         </LinearLayout>
     </ScrollView>
     <com.google.android.material.bottomnavigation.BottomNavigationView

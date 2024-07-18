@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.MediaController;
+import android.widget.ScrollView;
 import android.widget.SearchView;
 import android.widget.Toast;
 import android.widget.VideoView;
@@ -21,6 +22,7 @@ import java.util.ArrayList;
 
 public class  VideoSearchPopView extends AppCompatActivity {
 
+    ScrollView scrollView;
     private VideoView videoView,videoView1;
     @SuppressLint("MissingInflatedId")
     @Override
@@ -28,6 +30,13 @@ public class  VideoSearchPopView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video_search_pop_view);
 
+        scrollView = findViewById(R.id.view);
+        scrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.scrollTo(0, 0);
+            }
+        });
         videoView = findViewById(R.id.vv);
         Uri uri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.videoview);
         videoView.setVideoURI(uri);
@@ -52,5 +61,23 @@ public class  VideoSearchPopView extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+    }
+
+    public void video(View view) {
+        scrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.scrollTo(0, 0);
+            }
+        });
+    }
+
+    public void sview(View view) {
+        scrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.scrollTo(0, 2150);
+            }
+        });
     }
 }

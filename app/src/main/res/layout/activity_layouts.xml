@@ -130,8 +130,7 @@
         android:id="@+id/bottombar"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_alignParentBottom="true"
         android:layout_gravity="bottom"
         android:background="#A8C3C3">
         <LinearLayout

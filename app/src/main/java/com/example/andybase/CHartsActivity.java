@@ -7,10 +7,12 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.MediaController;
+import android.widget.ScrollView;
 import android.widget.VideoView;
 
 public class CHartsActivity extends AppCompatActivity {
     VideoView v1,v2,v3,v4,v5,v6,v7;
+    ScrollView scrollView;
     Uri uri;
     MediaController mediaController;
     @SuppressLint("MissingInflatedId")
@@ -19,6 +21,13 @@ public class CHartsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_charts);
 
+        scrollView = findViewById(R.id.view);
+        scrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.scrollTo(0, 0);
+            }
+        });
         v1 = findViewById(R.id.piechart);
         uri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.piechart);
         v1.setVideoURI(uri);
@@ -49,5 +58,41 @@ public class CHartsActivity extends AppCompatActivity {
     }
     public void chartimage(View view) {
         onBackPressed();
+    }
+
+    public void piechart(View view) {
+        scrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.scrollTo(0, 0);
+            }
+        });
+    }
+
+    public void linechart(View view) {
+        scrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.scrollTo(0, 2830);
+            }
+        });
+    }
+
+    public void gchart(View view) {
+        scrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.scrollTo(0, 5650);
+            }
+        });
+    }
+
+    public void pchart(View view) {
+        scrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.scrollTo(0, 9800);
+            }
+        });
     }
 }

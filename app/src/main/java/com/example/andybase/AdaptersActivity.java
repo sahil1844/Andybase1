@@ -27,6 +27,7 @@ public class AdaptersActivity extends AppCompatActivity {
     AdapterViewFlipper adapterViewFlipper;
 
     int[] images = {R.mipmap.a, R.mipmap.b, R.mipmap.c, R.mipmap.d};
+    ScrollView scrollView;
 
     String[] names = {"Nature", "Colorfull Pan", "Sun", "Land Cruiser"};
     @Override
@@ -34,7 +35,7 @@ public class AdaptersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adapters);
 
-        ScrollView scrollView = findViewById(R.id.view);
+        scrollView = findViewById(R.id.view);
         scrollView.post(new Runnable() {
             @Override
             public void run() {
@@ -78,6 +79,49 @@ public class AdaptersActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+    }
+
+    public void arrayadpt(View view) {
+        scrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.scrollTo(0, 0);
+            }
+        });
+    }
+    public void simpleadpt(View view) {
+        scrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.scrollTo(0, 2720);
+            }
+        });
+    }
+
+    public void splexadpt(View view) {
+        scrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.scrollTo(0, 7150);
+            }
+        });
+    }
+
+    public void adptflip(View view) {
+        scrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.scrollTo(0, 16330);
+            }
+        });
+    }
+    public void baseexadpt(View view) {
+        scrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.scrollTo(0, 20910);
+            }
+        });
     }
 
     public class CustomAdapter extends BaseAdapter {

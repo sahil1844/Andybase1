@@ -45,8 +45,8 @@ public class ProfileActivity extends AppCompatActivity {
     private static final int REQUEST_STORAGE_PERMISSION = 1;
     TextView usere;
     RoundedImageView imageView;
-    TextInputLayout email1,password1;
-    TextInputEditText emailfeild,passfeild;
+    TextInputLayout email1,fname,lname;
+    TextInputEditText emailfeild,fnamefeild,lnamefeild;
     DBHelper helper;
     InputMethodManager imm;
     @SuppressLint("MissingInflatedId")
@@ -55,9 +55,11 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         email1 = findViewById(R.id.pemail);
-        password1 = findViewById(R.id.ppass);
         emailfeild = findViewById(R.id.profile_Email);
-        passfeild = findViewById(R.id.profile_password);
+        fname = findViewById(R.id.pfname);
+        lname = findViewById(R.id.plname);
+        fnamefeild = findViewById(R.id.profile_Fname);
+        lnamefeild = findViewById(R.id.profile_Lname);
         usere = findViewById(R.id.useremail);
         imageView = findViewById(R.id.imageView3);
         imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -145,30 +147,36 @@ public class ProfileActivity extends AppCompatActivity {
     }
     public void Updatesettings(View view) {
         imm.hideSoftInputFromWindow(getWindow().getDecorView().getWindowToken(), 0);
+        String fname1 = fnamefeild.getText().toString().trim();
+        String lname1 = lnamefeild.getText().toString().trim();
         String email11 = emailfeild.getText().toString().trim();
-        String pass11 = passfeild.getText().toString().trim();
-        if (email11.isEmpty() && pass11.isEmpty()) {
+        if (fname1.isEmpty() && lname1.isEmpty() && email11.isEmpty()) {
+            fname.setHelperTextEnabled(true);
+            lname.setHelperTextEnabled(true);
+            fname.setHelperText("*Enter First Name*");
+            lname.setHelperText("*Enter Last Name*");
+            fname.setHelperTextColor(ColorStateList.valueOf(Color.RED));
+            lname.setHelperTextColor(ColorStateList.valueOf(Color.RED));
             email1.setHelperTextEnabled(true);
-            password1.setHelperTextEnabled(true);
             email1.setHelperText("*Enter A Valid Email*");
-            password1.setHelperText("*Enter password atleast 8 Character have like this 1,$,S,s*");
             email1.setHelperTextColor(ColorStateList.valueOf(Color.RED));
-            password1.setHelperTextColor(ColorStateList.valueOf(Color.RED));
+        } else if (fname1.isEmpty()) {
+            fname.setHelperTextEnabled(true);
+            fname.setHelperText("*Enter First Name*");
+            fname.setHelperTextColor(ColorStateList.valueOf(Color.RED));
+        } else if (lname1.isEmpty()) {
+            lname.setHelperTextEnabled(true);
+            lname.setHelperText("*Enter Last Name*");
+            lname.setHelperTextColor(ColorStateList.valueOf(Color.RED));
         } else if (email11.isEmpty()) {
             email1.setHelperTextEnabled(true);
             email1.setHelperText("*Enter A Valid Email*");
             email1.setHelperTextColor(ColorStateList.valueOf(Color.RED));
-        } else if (pass11.isEmpty()) {
-            password1.setHelperTextEnabled(true);
-            password1.setHelperText("*Enter password atleast 8 Character have like this 1,$,S,s*");
-            password1.setHelperTextColor(ColorStateList.valueOf(Color.RED));
         } else {
-            if(isValidPassword(pass11)) {
                 if(helper.checkEmail(email11)) {
-                    Boolean Check_email_update = helper.updateemail(email11, pass11, usere.getText().toString());
+                    Boolean Check_email_update = helper.updateemail(email11, usere.getText().toString());
                     if (Check_email_update) {
                         Log.d("email", email11);
-                        Log.d("pass", pass11);
                         Toast.makeText(ProfileActivity.this, "Updated SuccessFully..", Toast.LENGTH_SHORT).show();
                     } else {
                         Toast.makeText(ProfileActivity.this, "Not Updated...", Toast.LENGTH_SHORT).show();
@@ -176,15 +184,15 @@ public class ProfileActivity extends AppCompatActivity {
                 }else{
                     Toast.makeText(ProfileActivity.this, "Email Not Found..", Toast.LENGTH_SHORT).show();
                 }
-            }
+
         }
     }
-    public boolean isValidPassword(final String password) {
-        Pattern pattern;
-        Matcher matcher;
-        final String PASSWORD_PATTERN = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$";
-        pattern = Pattern.compile(PASSWORD_PATTERN);
-        matcher = pattern.matcher(password);
-        return matcher.matches();
-    }
+//    public boolean isValidPassword(final String password) {
+//        Pattern pattern;
+//        Matcher matcher;
+//        final String PASSWORD_PATTERN = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$";
+//        pattern = Pattern.compile(PASSWORD_PATTERN);
+//        matcher = pattern.matcher(password);
+//        return matcher.matches();
+//    }
 }

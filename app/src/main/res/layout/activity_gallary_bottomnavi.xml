@@ -58,13 +58,55 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="20dp"
+                android:orientation="horizontal" >
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:onClick="gview"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:backgroundTint="#A8C3C3"
+                    android:layout_height="50dp"
+                    app:cardCornerRadius="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="@dimen/_15ssp"
+                        android:textColor="@color/black"
+                        android:layout_height="wrap_content"
+                        android:text="Gallery View"/>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="5dp"
+                    android:onClick="bnview"
+                    android:backgroundTint="#A8C3C3"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    app:cardCornerRadius="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="@dimen/_14ssp"
+                        android:paddingHorizontal="17dp"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:layout_height="wrap_content"
+                        android:text="BottomNavigationView"/>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
 
             <TextView
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="10sp"
-                android:text="GallaryView"
+                android:text="GalleryView"
                 android:textColor="@color/black"
                 android:textSize="@dimen/headingtext"
                 android:textStyle="bold" />
@@ -119,7 +161,7 @@
                 android:layout_marginBottom="@dimen/_5ssp"
                 android:textSize="@dimen/simpletext"/>
             <com.google.android.material.bottomnavigation.BottomNavigationView
-                android:id="@+id/bottombar"
+                android:id="@+id/bottombar1"
                 android:layout_width="match_parent"
                 android:layout_height="50sp"
                 android:layout_marginHorizontal="@dimen/_30sdp"

@@ -16,16 +16,18 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("Create table allusers(id integer primary key autoincrement ,email text, password text)");
+        db.execSQL("Create table allusers(id integer primary key autoincrement ,fname text,lname text,email text, password text)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
     }
-    public  Boolean insertData(String email,String pass) {
+    public  Boolean insertData(String fname,String lname,String email,String pass) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
+        cv.put("fname",fname);
+        cv.put("lname",lname);
         cv.put("email",email);
         cv.put("password",pass);
         long res = db.insert("allusers",null,cv);
@@ -71,11 +73,10 @@ public class DBHelper extends SQLiteOpenHelper {
         return db.rawQuery("Select * from allusers where email = ?",new String[]{email});
     }
 
-    public Boolean updateemail(String em, String pass, String uem) {
+    public Boolean updateemail(String em, String uem) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put("email",em);
-        cv.put("password",pass);
         long res = db.update("allusers",cv,"email = ?",new String[]{uem});
         if(res != -1)
             return true;

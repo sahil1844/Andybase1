@@ -8,12 +8,16 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.Objects;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -30,10 +34,6 @@ public class HomeActivity extends AppCompatActivity {
         Intent i = getIntent();
         username = i.getStringExtra("homeem");
 
-        selectedTextView = findViewById(R.id.navigation_basics);  // Default selected item
-        selectedTextView.setSelected(true);
-        updateTextViewAppearance(selectedTextView);
-
     }
     @SuppressLint("NonConstantResourceId")
     public void onNavigationItemSelected(View view) {
@@ -45,39 +45,47 @@ public class HomeActivity extends AppCompatActivity {
         selectedTextView = (TextView) view;
         selectedTextView.setSelected(true);
         updateTextViewAppearance(selectedTextView);
-
-        // Start the appropriate activity based on the clicked item
-//        switch (view.getId()) {
-//            case R.id.navigation_basics:
-//                basics(view);
-//                break;
-//            case R.id.navigation_widget:
-//                widgets(view);
-//                break;
-//            case R.id.navigation_adapter:
-//                adapters(view);
-//                break;
-//            case R.id.navigation_charts:
-//                barcharts(view);
-//                break;
-//            case R.id.navigation_animation:
-//                animations(view);
-//                break;
-//        }
     }
 
     private void updateTextViewAppearance(TextView textView) {
-        textView.setTextColor(getResources().getColor(R.color.colorSelected));// Replace with your selected color
-//        textView.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#9B9999")));
-        textView.setCompoundDrawableTintList(ColorStateList.valueOf(Color.BLUE));
-        textView.setBackgroundResource(R.drawable.selected_background);  // Replace with your selected background drawable
+        int id = textView.getId();
+        Log.d("aaaaaaaa", String.valueOf(id));
+        if(id == R.id.navigation_basics){
+            Drawable drawable = getResources().getDrawable(R.mipmap.fillbasic); // Replace with your selected drawable
+            textView.setCompoundDrawablesWithIntrinsicBounds(null, drawable, null, null);
+        }else if(id == R.id.navigation_widget){
+            Drawable drawable = getResources().getDrawable(R.mipmap.fillwidget); // Replace with your selected drawable
+            textView.setCompoundDrawablesWithIntrinsicBounds(null, drawable, null, null);
+        }else if(id == R.id.navigation_adpater){
+            Drawable drawable = getResources().getDrawable(R.mipmap.filladapter); // Replace with your selected drawable
+            textView.setCompoundDrawablesWithIntrinsicBounds(null, drawable, null, null);
+        }else if(id == R.id.navigation_charts){
+            Drawable drawable = getResources().getDrawable(R.mipmap.fillcharts); // Replace with your selected drawable
+            textView.setCompoundDrawablesWithIntrinsicBounds(null, drawable, null, null);
+        }else if(id == R.id.navigation_animation){
+            Drawable drawable = getResources().getDrawable(R.mipmap.fillanimation); // Replace with your selected drawable
+            textView.setCompoundDrawablesWithIntrinsicBounds(null, drawable, null, null);
+        }
     }
-
     private void resetTextViewAppearance(TextView textView) {
-        textView.setTextColor(getResources().getColor(R.color.black));// Replace with your default color
-//        textView.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#A8C3C3")));
-        textView.setCompoundDrawableTintList(ColorStateList.valueOf(Color.BLACK));
-        textView.setBackgroundResource(android.R.color.transparent);  // Replace with your default background drawable
+        int id = textView.getId();
+        Log.d("aaaaaaaa", String.valueOf(id));
+        if(id == R.id.navigation_basics){
+            Drawable drawable = getResources().getDrawable(R.mipmap.unfillbasic); // Replace with your selected drawable
+            textView.setCompoundDrawablesWithIntrinsicBounds(null, drawable, null, null);
+        }else if(id == R.id.navigation_widget){
+            Drawable drawable = getResources().getDrawable(R.mipmap.unfillwidget); // Replace with your selected drawable
+            textView.setCompoundDrawablesWithIntrinsicBounds(null, drawable, null, null);
+        }else if(id == R.id.navigation_adpater){
+            Drawable drawable = getResources().getDrawable(R.mipmap.unfilladapter); // Replace with your selected drawable
+            textView.setCompoundDrawablesWithIntrinsicBounds(null, drawable, null, null);
+        }else if(id == R.id.navigation_charts){
+            Drawable drawable = getResources().getDrawable(R.mipmap.unfillcharts); // Replace with your selected drawable
+            textView.setCompoundDrawablesWithIntrinsicBounds(null, drawable, null, null);
+        }else if(id == R.id.navigation_animation){
+            Drawable drawable = getResources().getDrawable(R.mipmap.unfillanimation); // Replace with your selected drawable
+            textView.setCompoundDrawablesWithIntrinsicBounds(null, drawable, null, null);
+        }
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -107,6 +115,7 @@ public class HomeActivity extends AppCompatActivity {
     }
     public void home1(MenuItem item) {
         Intent i = new Intent(this, MainActivity.class);
+        i.putExtra("item",111);
         startActivity(i);
     }
     public void profile1(MenuItem item) {
@@ -119,27 +128,27 @@ public class HomeActivity extends AppCompatActivity {
     public void basics(View view) {
         onNavigationItemSelected(view);
         Intent i = new Intent(this, MainActivity.class);
-        i.putExtra("item","Basic");
+        i.putExtra("item",0);
         startActivity(i);
         }
     public void widgets(View view) {
         onNavigationItemSelected(view);
         Intent i = new Intent(this, MainActivity.class);
-        i.putExtra("item","Widget");
+        i.putExtra("item",1);
         startActivity(i); }
     public void adapters(View view) {
         onNavigationItemSelected(view);
         Intent i = new Intent(this, MainActivity.class);
-        i.putExtra("item","Adapter");
+        i.putExtra("item",2);
         startActivity(i); }
     public void barcharts(View view) {
         onNavigationItemSelected(view);
         Intent i = new Intent(this, MainActivity.class);
-        i.putExtra("item","Barchart");
+        i.putExtra("item",3);
         startActivity(i); }
     public void animations(View view) {
         onNavigationItemSelected(view);
         Intent i = new Intent(this, MainActivity.class);
-        i.putExtra("item","Animation");
+        i.putExtra("item",4);
         startActivity(i); }
 }
