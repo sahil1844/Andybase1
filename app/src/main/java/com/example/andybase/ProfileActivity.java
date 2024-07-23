@@ -2,16 +2,11 @@ package com.example.andybase;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -25,25 +20,20 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.google.android.material.imageview.ShapeableImageView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.makeramen.roundedimageview.RoundedImageView;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class ProfileActivity extends AppCompatActivity {
 
     private static final int REQUEST_IMAGE_PICK = 2;
     private static final int REQUEST_STORAGE_PERMISSION = 1;
-    TextView usere;
+    TextView usere,uname;
     RoundedImageView imageView;
     TextInputLayout email1,fname,lname;
     TextInputEditText emailfeild,fnamefeild,lnamefeild;
@@ -61,6 +51,7 @@ public class ProfileActivity extends AppCompatActivity {
         fnamefeild = findViewById(R.id.profile_Fname);
         lnamefeild = findViewById(R.id.profile_Lname);
         usere = findViewById(R.id.useremail);
+        uname = findViewById(R.id.username);
         imageView = findViewById(R.id.imageView3);
         imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         String emailuser = emailfeild.getText().toString();
@@ -87,21 +78,27 @@ public class ProfileActivity extends AppCompatActivity {
         });
         helper = new DBHelper(this);
         Intent i = getIntent();
-//        String username = i.getStringExtra("nm");
+        String username = i.getStringExtra("nm");
         String s = "";
+        String f = "";
+        String l = "";
         String p = "";
-//        Cursor cr = helper.showdata(username);
-//        if (cr.getCount() == 0) {
-//            emailfeild.setText("Record not found!!!");
-//        } else {
-//            while (cr.moveToNext()) {
-//                s += cr.getString(1);
-//                p += cr.getString(2);
-//            }
-//                usere.setText(s);
-//                emailfeild.setText(s);
-//                passfeild.setText(p);
-//        }
+        Cursor cr = helper.showdata(username);
+        if (cr.getCount() == 0) {
+            emailfeild.setText("Record not found!!!");
+        } else {
+            while (cr.moveToNext()) {
+                s = cr.getString(1) + cr.getString(2);
+                f = cr.getString(1);
+                l = cr.getString(2);
+                p += cr.getString(3);
+            }
+                fnamefeild.setText(f);
+                lnamefeild.setText(l);
+                usere.setText(p);
+                uname.setText(s);
+                emailfeild.setText(p);
+        }
 
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
