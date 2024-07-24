@@ -20,19 +20,25 @@
 
             <TextView
                 android:id="@+id/textView2"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="14dp"
-                android:gravity="center"
+                android:layout_gravity="center"
                 android:text="Navigation Drawer"
-                android:paddingEnd="50sp"
                 android:textAllCaps="true"
                 android:textColor="@color/black"
                 android:textSize="@dimen/headingtext"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Back"
+                android:layout_marginEnd="30dp"
+                android:textSize="@dimen/headingtext"
+                android:textColor="@color/black"
+                android:onClick="navback"
+                android:layout_gravity="end"/>
         </androidx.appcompat.widget.Toolbar>
         <View
             android:id="@+id/view2"

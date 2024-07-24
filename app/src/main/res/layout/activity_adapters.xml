@@ -22,18 +22,14 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textView2"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="17dp"
-        android:gravity="center"
+        android:layout_gravity="center"
         android:text="Adapters in android"
         android:textAllCaps="true"
         android:textColor="@color/black"
         android:textSize="@dimen/_13sdp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textStyle="bold" />
     </androidx.appcompat.widget.Toolbar>
     <View
         android:id="@+id/view2"
@@ -51,7 +47,8 @@
         android:layout_marginTop="@dimen/_150sdp"
         android:layout_marginBottom="@dimen/_50sdp"
         android:scrollbars="vertical"
-
+        android:fadeScrollbars="false"
+        android:scrollbarStyle="insideInset"
         app:layout_constraintBottom_toTopOf="@id/bottombar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -194,6 +191,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="10sp"
+                android:letterSpacing="0.01"
                 android:text="@string/adpt_para1"
                 android:textColor="@color/black"
                 android:textSize="@dimen/simpletext"/>
@@ -348,6 +346,13 @@
                 tools:ignore="HardcodedText" />
         </LinearLayout>
     </ScrollView>
+    <ImageView
+        android:id="@+id/scrollIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/scroll"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/view" />
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottombar"
         android:layout_width="match_parent"
