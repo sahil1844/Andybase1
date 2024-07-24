@@ -17,6 +17,7 @@
         android:layout_width="50dp"
         android:layout_height="30dp"
         android:onClick="aboutimage"
+        android:paddingEnd="15dp"
         android:layout_marginTop="10dp"
         android:src="@drawable/back" />
 
@@ -24,10 +25,10 @@
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="8dp"
         android:layout_marginTop="12dp"
         android:gravity="center"
         android:text="About Us"
+        android:paddingEnd="20dp"
         android:letterSpacing="0.2"
         android:textAllCaps="true"
         android:textColor="@color/black"
