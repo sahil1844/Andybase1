@@ -13,7 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends HomeActivity {
     String username;
     int item;
     Spinner spinner,spin2,spin3,spin4,spin5;
@@ -104,8 +104,7 @@ public class MainActivity extends AppCompatActivity {
             mdanim1.setVisibility(View.GONE);
             mdanim2.setVisibility(View.GONE);
 
-        }
-        else if(item == 1){
+        }else if(item == 1){
             Header.setText("Widgets");
 
             widget1.setVisibility(View.VISIBLE);
@@ -139,8 +138,7 @@ public class MainActivity extends AppCompatActivity {
 
             mdanim1.setVisibility(View.GONE);
             mdanim2.setVisibility(View.GONE);
-        }
-        else if(item == 2){
+        }else if(item == 2){
             Header.setText("Adapter");
 
             adpt1.setVisibility(View.VISIBLE);
@@ -173,8 +171,7 @@ public class MainActivity extends AppCompatActivity {
 
             mdanim1.setVisibility(View.GONE);
             mdanim2.setVisibility(View.GONE);
-        }
-        else if(item == 3){
+        }else if(item == 3){
             Header.setText("Bar/Charts");
 
             barchart1.setVisibility(View.VISIBLE);
@@ -207,8 +204,7 @@ public class MainActivity extends AppCompatActivity {
 
             mdanim1.setVisibility(View.GONE);
             mdanim2.setVisibility(View.GONE);
-        }
-        else if(item == 4){
+        }else if(item == 4){
             Header.setText("Animation");
 
             mdanim1.setVisibility(View.VISIBLE);
@@ -240,8 +236,7 @@ public class MainActivity extends AppCompatActivity {
 
             barchart1.setVisibility(View.GONE);
             barchart2.setVisibility(View.GONE);
-        }
-        else if(item == 111){
+        }else if(item == 111){
             cardview1.setVisibility(View.VISIBLE);
             cardview2.setVisibility(View.VISIBLE);
             cardview3.setVisibility(View.VISIBLE);
@@ -343,7 +338,6 @@ public class MainActivity extends AppCompatActivity {
                     case 3:
                     case 2:
                         Intent i = new Intent(MainActivity.this, LayoutsActivity.class);
-                        i.putExtra("value",4);
                         startActivity(i);
                         break;
                 }
@@ -431,96 +425,26 @@ public class MainActivity extends AppCompatActivity {
     public void backtohome(View view) {
         onBackPressed();
     }
-    // Basic Topics subpoint onclick
-    public void basic1(View view) {
-        Intent i = new Intent(MainActivity.this, AboutActivity.class);
-        startActivity(i);
+
+    public void basics1(View view) {
+        onNavigationItemSelected(view);
+        basicCommon();
     }
-    public void basic2(View view) {
-        Intent i1 = new Intent(MainActivity.this, HistoryActivity.class);
-        startActivity(i1);
+    public void widgets1(View view) {
+        onNavigationItemSelected(view);
+        widgetsCommon();
     }
-    public void basic3(View view) {
-        Intent i2 = new Intent(MainActivity.this, ArchitectureActivity.class);
-        startActivity(i2);
+    public void adapters1(View view) {
+
+        onNavigationItemSelected(view);
+        adaptersCommon();
     }
-    public void basic4(View view) {
-        Intent i3 = new Intent(MainActivity.this, appFileStructure.class);
-        startActivity(i3);
+    public void charts1(View view) {
+        onNavigationItemSelected(view);
+        barchartsCommon();
     }
-    public void basic5(View view) {
-        Intent i6 = new Intent(MainActivity.this, StructuresActivity.class);
-        startActivity(i6);
-    }
-    public void basic6(View view) {
-        Intent i9 = new Intent(MainActivity.this, ManifestFile.class);
-        startActivity(i9);
-    }
-    public void basic7(View view) {
-        Intent i4 = new Intent(MainActivity.this, ResrawAsset.class);
-        startActivity(i4);
-    }
-    public void basic8(View view) {
-        Intent i7 = new Intent(MainActivity.this, ActivityLifecycle.class);
-        startActivity(i7);
-    }
-    public void basic9(View view) {
-        Intent i5 = new Intent(MainActivity.this, ContextTypes.class);
-        startActivity(i5);
-    }
-    public void basic10(View view) {
-        Intent i8 = new Intent(MainActivity.this, BundleActivity.class);
-        startActivity(i8);
-    }
-    // three types of widgetss
-    public void widget1(View view) {
-        Intent i = new Intent(MainActivity.this, LayoutsActivity.class);
-        i.putExtra("value",0);
-        startActivity(i);
-    }
-    public void widget2(View view) {
-        Intent i = new Intent(MainActivity.this, LayoutsActivity.class);
-        i.putExtra("value",1);
-        startActivity(i);
-    }
-    public void widget3(View view) {
-        Intent i = new Intent(MainActivity.this, LayoutsActivity.class);
-        i.putExtra("value",2);
-        startActivity(i);
-    }
-    //adapter onlick
-    public void adpt1(View view) {
-        Intent i = new Intent(MainActivity.this, AdaptersActivity.class);
-        startActivity(i);
-    }
-    public void adpt2(View view) {
-        Intent i = new Intent(MainActivity.this, AdaptersActivity.class);
-        startActivity(i);
-    }
-    public void adpt3(View view) {
-        Intent i = new Intent(MainActivity.this, AdaptersActivity.class);
-        startActivity(i);
-    }
-    public void adpt4(View view) {
-        Intent i = new Intent(MainActivity.this, AdaptersActivity.class);
-        startActivity(i);
-    }
-    //bar/charts onclick
-    public void barchart1(View view) {
-        Intent i = new Intent(MainActivity.this, BarsActivity.class);
-        startActivity(i);
-    }
-    public void barchart2(View view) {
-        Intent i1 = new Intent(MainActivity.this, CHartsActivity.class);
-        startActivity(i1);
-    }
-    //animation onclik
-    public void mdanim1(View view) {
-        Intent i = new Intent(MainActivity.this, MDAndAnimation.class);
-        startActivity(i);
-    }
-    public void mdanim2(View view) {
-        Intent i1 = new Intent(MainActivity.this, Animations.class);
-        startActivity(i1);
+    public void animations1(View view) {
+        onNavigationItemSelected(view);
+        animationsCommon();
     }
 }

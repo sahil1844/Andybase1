@@ -13,7 +13,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MDAndAnimation extends AppCompatActivity {
+public class MDAndAnimation extends HomeActivity {
 
     ScrollView scrollView;
     @Override
@@ -133,5 +133,26 @@ public class MDAndAnimation extends AppCompatActivity {
                 scrollView.scrollTo(0, 12900);
             }
         });
+    }
+
+    public void basic14(View view) {
+        onNavigationItemSelected(view);
+        basicCommon();
+    }
+    public void widget14(View view) {
+        onNavigationItemSelected(view);
+        widgetsCommon();
+    }
+    public void adapter14(View view) {
+        onNavigationItemSelected(view);
+        adaptersCommon();
+    }
+    public void chart14(View view) {
+        onNavigationItemSelected(view);
+        barchartsCommon();
+    }
+    public void animation14(View view) {
+        onNavigationItemSelected(view);
+        animationsCommon();
     }
 }

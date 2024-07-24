@@ -10,7 +10,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class ResrawAsset extends AppCompatActivity {
+public class ResrawAsset extends HomeActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,4 +30,24 @@ public class ResrawAsset extends AppCompatActivity {
         super.onBackPressed();
     }
 
+    public void basic8(View view) {
+        onNavigationItemSelected(view);
+        basicCommon();
+    }
+    public void widget8(View view) {
+        onNavigationItemSelected(view);
+        widgetsCommon();
+    }
+    public void adapter8(View view) {
+        onNavigationItemSelected(view);
+        adaptersCommon();
+    }
+    public void chart8(View view) {
+        onNavigationItemSelected(view);
+        barchartsCommon();
+    }
+    public void animation8(View view) {
+        onNavigationItemSelected(view);
+        animationsCommon();
+    }
 }

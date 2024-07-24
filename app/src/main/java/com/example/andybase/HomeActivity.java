@@ -6,8 +6,6 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,8 +14,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.util.Objects;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -127,28 +123,52 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(i); }
     public void basics(View view) {
         onNavigationItemSelected(view);
-        Intent i = new Intent(this, MainActivity.class);
-        i.putExtra("item",0);
-        startActivity(i);
+        basicCommon();
         }
     public void widgets(View view) {
         onNavigationItemSelected(view);
-        Intent i = new Intent(this, MainActivity.class);
-        i.putExtra("item",1);
-        startActivity(i); }
+            widgetsCommon();
+         }
     public void adapters(View view) {
         onNavigationItemSelected(view);
-        Intent i = new Intent(this, MainActivity.class);
-        i.putExtra("item",2);
-        startActivity(i); }
+        adaptersCommon();
+        }
     public void barcharts(View view) {
         onNavigationItemSelected(view);
-        Intent i = new Intent(this, MainActivity.class);
-        i.putExtra("item",3);
-        startActivity(i); }
+        barchartsCommon();
+        }
     public void animations(View view) {
         onNavigationItemSelected(view);
+        animationsCommon();
+
+        }
+        protected void basicformain(){
+
+        Toast.makeText(this, "allready exist", Toast.LENGTH_SHORT).show();
+        }
+    protected void basicCommon(){
+        Intent i = new Intent(this, MainActivity.class);
+        i.putExtra("item",0);
+        startActivity(i);
+    }
+    protected void widgetsCommon(){
+        Intent i = new Intent(this, MainActivity.class);
+        i.putExtra("item",1);
+        startActivity(i);
+    }
+    protected void adaptersCommon(){
+        Intent i = new Intent(this, MainActivity.class);
+        i.putExtra("item",2);
+        startActivity(i);
+    }
+    protected void barchartsCommon(){
+        Intent i = new Intent(this, MainActivity.class);
+        i.putExtra("item",3);
+        startActivity(i);
+    }
+    protected void animationsCommon(){
         Intent i = new Intent(this, MainActivity.class);
         i.putExtra("item",4);
-        startActivity(i); }
+        startActivity(i);
+    }
 }

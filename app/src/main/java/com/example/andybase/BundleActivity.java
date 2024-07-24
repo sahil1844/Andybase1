@@ -9,7 +9,7 @@ import android.widget.MediaController;
 import android.widget.ScrollView;
 import android.widget.VideoView;
 
-public class BundleActivity extends AppCompatActivity {
+public class BundleActivity extends HomeActivity {
 
     ScrollView scrollView;
     private VideoView videoView;
@@ -43,5 +43,31 @@ public class BundleActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+    }
+
+    public void basic11(View view) {
+        onNavigationItemSelected(view);
+        basicCommon();
+
+    }
+    public void widget11(View view) {
+        onNavigationItemSelected(view);
+        widgetsCommon();
+
+    }
+    public void adapter11(View view) {
+        onNavigationItemSelected(view);
+        adaptersCommon();
+
+    }
+    public void chart11(View view) {
+        onNavigationItemSelected(view);
+        barchartsCommon();
+
+    }
+    public void animation11(View view) {
+        onNavigationItemSelected(view);
+        animationsCommon();
+
     }
 }

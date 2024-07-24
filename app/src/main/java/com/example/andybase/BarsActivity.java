@@ -13,7 +13,7 @@ import android.widget.MediaController;
 import android.widget.ScrollView;
 import android.widget.VideoView;
 
-public class BarsActivity extends AppCompatActivity {
+public class BarsActivity extends HomeActivity {
 
     ScrollView scrollView;
     VideoView v1,v2,v3,v4,v5,v6,v7;
@@ -227,5 +227,26 @@ public class BarsActivity extends AppCompatActivity {
                 scrollView.scrollTo(0, 26590);
             }
         });
+    }
+
+    public void bars(View view) {
+        onNavigationItemSelected(view);
+        barchartsCommon();
+    }
+    public void widgets(View view) {
+        onNavigationItemSelected(view);
+        widgetsCommon();
+    }
+    public void adapters(View view) {
+        onNavigationItemSelected(view);
+        adaptersCommon();
+    }
+    public void charts(View view) {
+        onNavigationItemSelected(view);
+        barchartsCommon();
+    }
+    public void animations(View view) {
+        onNavigationItemSelected(view);
+        animationsCommon();
     }
 }
