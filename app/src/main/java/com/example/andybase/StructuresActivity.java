@@ -9,7 +9,7 @@ import android.view.View;
 
 import com.google.android.material.imageview.ShapeableImageView;
 
-public class StructuresActivity extends AppCompatActivity {
+public class StructuresActivity extends HomeActivity {
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,5 +32,26 @@ public class StructuresActivity extends AppCompatActivity {
     public void appfileStructure(View view) {
         Intent i = new Intent(StructuresActivity.this, ManifestFile.class);
         startActivity(i);
+    }
+
+    public void basics6(View view) {
+        onNavigationItemSelected(view);
+        basicCommon();
+    }
+    public void widget6(View view) {
+        onNavigationItemSelected(view);
+        widgetsCommon();
+    }
+    public void adapter6(View view) {
+        onNavigationItemSelected(view);
+        adaptersCommon();
+    }
+    public void chart6(View view) {
+        onNavigationItemSelected(view);
+        barchartsCommon();
+    }
+    public void animation6(View view) {
+        onNavigationItemSelected(view);
+        animationsCommon();
     }
 }

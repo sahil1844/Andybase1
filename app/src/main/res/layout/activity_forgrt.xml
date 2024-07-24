@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,56 +7,78 @@
     android:layout_height="match_parent"
     tools:context=".ForgrtActivity">
 
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/linearLayout"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:text="Forget Password"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_20sdp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center"
-        android:layout_marginStart="10sp"
-        android:layout_marginTop="195dp"
         android:orientation="vertical"
-        android:padding="20sp">
+        android:padding="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/email1"
-            android:layout_width="match_parent"
             style="@style/MyTheme"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:hint="Enter Email"
-            app:hintAnimationEnabled="true"
             android:autofillHints="emailAddress"
-            app:expandedHintEnabled="true"
-            app:endIconMode="clear_text"
-            app:startIconTint="@color/black"
+            android:hint="Enter Email"
             android:textColorHint="@color/black"
-            app:hintTextColor="@color/black"
-            app:helperTextTextColor="@color/black"
+            app:endIconMode="clear_text"
+            app:expandedHintEnabled="true"
             app:helperTextTextAppearance="@color/design_default_color_surface"
-            app:startIconDrawable="@drawable/email">
+            app:helperTextTextColor="@color/black"
+            app:hintAnimationEnabled="true"
+            app:hintTextColor="@color/black"
+            app:startIconDrawable="@drawable/email"
+            app:startIconTint="@color/black">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/forget_Email"
-                android:textSize="20sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:drawableTint="@color/black"
-                android:textColor="@color/black"
                 android:inputType="textEmailAddress"
                 android:singleLine="true"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:textColor="@color/black"
+                android:textSize="20sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/Reset_btn"
             android:layout_width="270dp"
-            android:backgroundTint="#3E4CA6"
             android:layout_height="70dp"
-            android:layout_marginTop="15dp"
             android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:backgroundTint="@color/btnbg"
             android:text="Reset Password"
             android:textSize="18sp"
             app:cornerRadius="30dp" />
 
     </LinearLayout>
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

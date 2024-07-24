@@ -8,7 +8,7 @@ import android.view.View;
 
 import com.google.android.material.imageview.ShapeableImageView;
 
-public class appFileStructure extends AppCompatActivity {
+public class appFileStructure extends HomeActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,4 +24,24 @@ public class appFileStructure extends AppCompatActivity {
         onBackPressed();
     }
 
+    public void basics5(View view) {
+        onNavigationItemSelected(view);
+        basicCommon();
+    }
+    public void widget5(View view) {
+        onNavigationItemSelected(view);
+        widgetsCommon();
+    }
+    public void adapter5(View view) {
+        onNavigationItemSelected(view);
+        adaptersCommon();
+    }
+    public void chart5(View view) {
+        onNavigationItemSelected(view);
+        barchartsCommon();
+    }
+    public void animation5(View view) {
+        onNavigationItemSelected(view);
+        animationsCommon();
+    }
 }

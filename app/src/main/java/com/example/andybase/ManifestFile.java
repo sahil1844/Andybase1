@@ -9,7 +9,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class ManifestFile extends AppCompatActivity {
+public class ManifestFile extends HomeActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,5 +22,29 @@ public class ManifestFile extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+    }
+
+    public void basics7(View view) {
+        onNavigationItemSelected(view);
+        basicCommon();
+    }
+    public void widget7(View view) {
+        onNavigationItemSelected(view);
+        widgetsCommon();
+    }
+    public void adapter7(View view) {
+        onNavigationItemSelected(view);
+        adaptersCommon();
+    }
+
+    public void chart7(View view) {
+        onNavigationItemSelected(view);
+        barchartsCommon();
+
+    }
+    public void animation7(View view) {
+        onNavigationItemSelected(view);
+        animationsCommon();
+
     }
 }

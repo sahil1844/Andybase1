@@ -142,6 +142,7 @@
                 android:layout_height="match_parent"
                 android:textStyle="bold"
                 android:text="Basics"
+                android:onClick="basic12"
                 android:paddingTop="10dp"
                 android:layout_weight="1"
                 android:drawableTop="@mipmap/unfillbasic"

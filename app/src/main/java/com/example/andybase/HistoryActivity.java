@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import com.google.android.material.imageview.ShapeableImageView;
 
-public class HistoryActivity extends AppCompatActivity {
+public class HistoryActivity extends HomeActivity {
 
     ShapeableImageView img;
 
@@ -31,4 +31,27 @@ public class HistoryActivity extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
     }
+
+    public void basic3(View view) {
+        onNavigationItemSelected(view);
+        basicCommon();
+
+    }
+    public void widget3(View view) {
+        onNavigationItemSelected(view);
+        widgetsCommon();
+    }
+    public void adapter3(View view) {
+        onNavigationItemSelected(view);
+        adaptersCommon();
+    }
+    public void chart3(View view) {
+        onNavigationItemSelected(view);
+        barchartsCommon();
+    }
+    public void animation3(View view) {
+        onNavigationItemSelected(view);
+        animationsCommon();
+    }
+
 }

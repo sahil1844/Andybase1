@@ -10,7 +10,7 @@ import android.window.OnBackInvokedDispatcher;
 
 import com.google.android.material.imageview.ShapeableImageView;
 
-public class ArchitectureActivity extends AppCompatActivity {
+public class ArchitectureActivity extends HomeActivity {
 
     ShapeableImageView imageView;
     @SuppressLint("MissingInflatedId")
@@ -31,5 +31,35 @@ public class ArchitectureActivity extends AppCompatActivity {
     @Override
     public OnBackInvokedDispatcher getOnBackInvokedDispatcher() {
         return super.getOnBackInvokedDispatcher();
+    }
+
+    public void basics4(View view) {
+        onNavigationItemSelected(view);
+        basicCommon();
+
+    }
+
+    public void widget4(View view) {
+        onNavigationItemSelected(view);
+        widgetsCommon();
+
+    }
+
+    public void adapter4(View view) {
+        onNavigationItemSelected(view);
+        adaptersCommon();
+
+    }
+
+    public void chart4(View view) {
+        onNavigationItemSelected(view);
+        barchartsCommon();
+
+    }
+
+    public void animation4(View view) {
+        onNavigationItemSelected(view);
+        animationsCommon();
+
     }
 }

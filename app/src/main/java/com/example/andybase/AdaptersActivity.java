@@ -19,7 +19,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.VideoView;
 
-public class AdaptersActivity extends AppCompatActivity {
+public class AdaptersActivity extends HomeActivity {
     ListView simpleListView;
     VideoView videoView,videoView1;
     String courseList[] = { "Cupcake", "Donut", "Eclair", "Froyo", "Gingerbread", "Honeycomb", "Ice Cream Sandwich", "Jelly Bean", "KitKat"};
@@ -123,6 +123,32 @@ public class AdaptersActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void basic2(View view) {
+        onNavigationItemSelected(view);
+        basicCommon();
+
+
+    }
+    public void widget2(View view) {
+        onNavigationItemSelected(view);
+        widgetsCommon();
+    }
+    public void adapter2(View view) {
+        onNavigationItemSelected(view);
+        adaptersCommon();
+    }
+    public void chart2(View view) {
+        onNavigationItemSelected(view);
+        barchartsCommon();
+
+    }
+    public void animation2(View view) {
+        onNavigationItemSelected(view);
+        animationsCommon();
+
+    }
+
 
     public class CustomAdapter extends BaseAdapter {
         Context context;

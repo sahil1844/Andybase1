@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-public class ActivityLifecycle extends AppCompatActivity {
+public class ActivityLifecycle extends HomeActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,5 +50,32 @@ public class ActivityLifecycle extends AppCompatActivity {
 
     public void lifecycleimage(View view) {
         onBackPressed();
+    }
+
+    public void basics9(View view) {
+        onNavigationItemSelected(view);
+        basicCommon();
+
+    }
+    public void widget9(View view) {
+        onNavigationItemSelected(view);
+        widgetsCommon();
+
+    }
+    public void adapter9(View view) {
+        onNavigationItemSelected(view);
+        adaptersCommon();
+
+    }
+    public void chart9(View view) {
+        onNavigationItemSelected(view);
+        barchartsCommon();
+
+
+    }
+    public void animation9(View view) {
+        onNavigationItemSelected(view);
+        animationsCommon();
+
     }
 }

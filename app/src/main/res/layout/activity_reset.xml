@@ -75,7 +75,7 @@
             android:id="@+id/changepass_btn"
             android:layout_width="270dp"
             android:layout_height="70dp"
-            android:backgroundTint="#3E4CA6"
+            android:backgroundTint="@color/btnbg"
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
             android:text="Change Password"
