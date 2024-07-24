@@ -13,7 +13,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 
-public class LayoutsActivity extends HomeActivity {
+public class LayoutsActivity extends AppCompatActivity {
 
     String username;
     Spinner spinner,spin2,spin3;
@@ -116,25 +116,4 @@ public class LayoutsActivity extends HomeActivity {
         super.onBackPressed();
     }
     public void layoutback(View view) {onBackPressed(); }
-
-    public void basic12(View view) {
-        onNavigationItemSelected(view);
-        basicCommon();
-    }
-    public void widget12(View view) {
-        onNavigationItemSelected(view);
-        widgetsCommon();
-    }
-    public void adapter12(View view) {
-        onNavigationItemSelected(view);
-        adaptersCommon();
-    }
-    public void chart12(View view) {
-        onNavigationItemSelected(view);
-        barchartsCommon();
-    }
-    public void animation12(View view) {
-        onNavigationItemSelected(view);
-        animationsCommon();
-    }
 }

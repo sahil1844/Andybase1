@@ -13,13 +13,11 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-public class MainActivity extends HomeActivity {
+public class MainActivity extends AppCompatActivity {
     String username;
     int item;
     Spinner spinner,spin2,spin3,spin4,spin5;
-    TextView Header,widget;
-
-
+    TextView Header;
     CardView cardview1,cardview2,cardview3,cardview4,cardview5,basic1,basic2,basic3,basic4,basic5,basic6,basic7,basic8,basic9,basic10,
             widget1,widget2,widget3,adpt1,adpt2,adpt3,adpt4,barchart1,barchart2,mdanim1,mdanim2;
     @SuppressLint({"MissingInflatedId", "ResourceType", "SetTextI18n"})
@@ -32,7 +30,7 @@ public class MainActivity extends HomeActivity {
         spin3 = findViewById(R.id.spinner3);
         spin4 = findViewById(R.id.spinner4);
         spin5 = findViewById(R.id.spinner5);
-        widget=findViewById(R.id.widget);
+
         cardview1 = findViewById(R.id.cardView);
         cardview2 = findViewById(R.id.cardView1);
         cardview3 = findViewById(R.id.cardView2);
@@ -48,15 +46,19 @@ public class MainActivity extends HomeActivity {
         basic8 = findViewById(R.id.basic8);
         basic9 = findViewById(R.id.basic9);
         basic10 = findViewById(R.id.basic10);
+
         widget1 = findViewById(R.id.widget1);
         widget2 = findViewById(R.id.widget2);
         widget3 = findViewById(R.id.widget3);
+
         adpt1 = findViewById(R.id.adpt1);
         adpt2 = findViewById(R.id.adpt2);
         adpt3 = findViewById(R.id.adpt3);
         adpt4 = findViewById(R.id.adpt4);
+
         barchart1 = findViewById(R.id.barchart1);
         barchart2 = findViewById(R.id.barchart2);
+
         mdanim1 = findViewById(R.id.mdanim1);
         mdanim2 = findViewById(R.id.mdanim2);
 
@@ -234,10 +236,7 @@ public class MainActivity extends HomeActivity {
 
             barchart1.setVisibility(View.GONE);
             barchart2.setVisibility(View.GONE);
-        }
-        else if
-        (item == 111)
-        {
+        }else if(item == 111){
             cardview1.setVisibility(View.VISIBLE);
             cardview2.setVisibility(View.VISIBLE);
             cardview3.setVisibility(View.VISIBLE);
@@ -368,7 +367,6 @@ public class MainActivity extends HomeActivity {
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
             }
         } );
 
@@ -426,26 +424,5 @@ public class MainActivity extends HomeActivity {
     }
     public void backtohome(View view) {
         onBackPressed();
-    }
-
-    public void basics1(View view) {
-        onNavigationItemSelected(view);
-        basicformain();
-    }
-    public void widgets1(View view) {
-        onNavigationItemSelected(view);
-        widgetsCommon();
-    }
-    public void adapters1(View view) {
-        onNavigationItemSelected(view);
-        adaptersCommon();
-    }
-    public void charts1(View view) {
-        barchartsCommon();
-        onNavigationItemSelected(view);
-    }
-    public void animations1(View view) {
-        onNavigationItemSelected(view);
-        animationsCommon();
     }
 }

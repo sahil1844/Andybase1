@@ -116,7 +116,7 @@ public class HomeActivity extends AppCompatActivity {
     }
     public void profile1(MenuItem item) {
         Intent i = new Intent(this, ProfileActivity.class);
-//        i.putExtra("nm",username);
+        i.putExtra("nm",username);
         startActivity(i); }
     public void about1(MenuItem item) {
         Intent i = new Intent(this, AboutActivity.class);

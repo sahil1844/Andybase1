@@ -52,6 +52,7 @@
                         android:textSize="20sp"
                         android:autofillHints="emailAddress"
                         android:drawableTint="@color/black"
+                        android:text="sahilrupareliya@bharadschools.org"
                         android:inputType="textEmailAddress"
                         android:textColor="@color/black"
                         android:singleLine="true"
@@ -79,6 +80,7 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:autofillHints="password"
+                        android:text="Sahil12@"
                         android:textSize="20sp"
                         android:textColor="@color/black"
                         android:id="@+id/Login_password"
