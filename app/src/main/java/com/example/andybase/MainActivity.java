@@ -13,7 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends HomeActivity {
     String username;
     int item;
     Spinner spinner,spin2,spin3,spin4,spin5;
@@ -424,5 +424,27 @@ public class MainActivity extends AppCompatActivity {
     }
     public void backtohome(View view) {
         onBackPressed();
+    }
+
+    public void basics1(View view) {
+        onNavigationItemSelected(view);
+        basicCommon();
+    }
+    public void widgets1(View view) {
+        onNavigationItemSelected(view);
+        widgetsCommon();
+    }
+    public void adapters1(View view) {
+
+        onNavigationItemSelected(view);
+        adaptersCommon();
+    }
+    public void charts1(View view) {
+        onNavigationItemSelected(view);
+        barchartsCommon();
+    }
+    public void animations1(View view) {
+        onNavigationItemSelected(view);
+        animationsCommon();
     }
 }
