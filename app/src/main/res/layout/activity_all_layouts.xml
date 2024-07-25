@@ -461,6 +461,7 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
             <TextView
+                android:onClick="basic1"
                 android:layout_width="80sp"
                 android:layout_height="match_parent"
                 android:textStyle="bold"
@@ -473,6 +474,7 @@
                 android:backgroundTint="#A8C3C3"
                 android:textColor="@color/black" />
             <TextView
+                android:onClick="widget1"
                 android:layout_width="70sp"
                 android:layout_height="match_parent"
                 android:paddingTop="10dp"
@@ -485,6 +487,7 @@
                 android:backgroundTint="#A8C3C3"
                 android:textColor="@color/black" />
             <TextView
+                android:onClick="adapter1"
                 android:layout_width="70dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -497,6 +500,7 @@
                 android:backgroundTint="#A8C3C3"
                 android:textColor="@color/black" />
             <TextView
+                android:onClick="charts1"
                 android:layout_width="70sp"
                 android:layout_height="match_parent"
                 android:paddingTop="10dp"
@@ -509,6 +513,7 @@
                 android:backgroundTint="#A8C3C3"
                 android:textColor="@color/black" />
             <TextView
+                android:onClick="anim1"
                 android:layout_width="70dp"
                 android:layout_height="match_parent"
                 android:paddingTop="10dp"

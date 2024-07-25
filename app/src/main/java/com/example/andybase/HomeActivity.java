@@ -140,12 +140,8 @@ public class HomeActivity extends AppCompatActivity {
     public void animations(View view) {
         onNavigationItemSelected(view);
         animationsCommon();
-
         }
-        protected void basicformain(){
 
-        Toast.makeText(this, "allready exist", Toast.LENGTH_SHORT).show();
-        }
     protected void basicCommon(){
         Intent i = new Intent(this, MainActivity.class);
         i.putExtra("item",0);
