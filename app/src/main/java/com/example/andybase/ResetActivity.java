@@ -67,9 +67,13 @@ public class ResetActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 imm.hideSoftInputFromWindow(getWindow().getDecorView().getWindowToken(), 0);
-                if (pass.equals("") && retype.equals("")){
+                String pass11 = pass.getText().toString().trim();
+                String pass12 = retype.getText().toString().trim();
+                if (pass11.isEmpty() && pass12.isEmpty()){
                     layout.setHelperTextEnabled(true);
                     layout1.setHelperTextEnabled(true);
+                    layout.setHelperText("Enter A Valid Password !!!");
+                    layout1.setHelperText("Enter A Valid Password !!!");
                     layout.setHelperTextColor(ColorStateList.valueOf(Color.RED));
                     layout1.setHelperTextColor(ColorStateList.valueOf(Color.RED));
                 }else{
@@ -80,6 +84,9 @@ public class ResetActivity extends AppCompatActivity {
                         String pass1 = pass.getText().toString();
                         String retype1 = retype.getText().toString();
                         if (pass1.equals(retype1)) {
+                            layout1.setHelperTextEnabled(true);
+                            layout1.setHelperText("Password Not Match !!!");
+                            layout1.setHelperTextColor(ColorStateList.valueOf(Color.RED));
                             Boolean Check_pass_update = helper.updatepassword(username, retype1);
                             if (Check_pass_update) {
                                 Intent i1 = new Intent(ResetActivity.this, LoginActivity.class);

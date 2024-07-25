@@ -338,6 +338,7 @@ public class MainActivity extends HomeActivity {
                     case 3:
                     case 2:
                         Intent i = new Intent(MainActivity.this, LayoutsActivity.class);
+                        i.putExtra("value",3);
                         startActivity(i);
                         break;
                 }
@@ -418,17 +419,112 @@ public class MainActivity extends HomeActivity {
             }
         } );
     }
+    public void basic1(View view) {
+        Intent i = new Intent(MainActivity.this, AboutActivity.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(i);
+    }
+    public void basic2(View view) {
+        Intent i1 = new Intent(MainActivity.this, HistoryActivity.class);
+        startActivity(i1);
+    }
+    public void basic3(View view) {
+        Intent i2 = new Intent(MainActivity.this, ArchitectureActivity.class);
+        startActivity(i2);
+    }
+    public void basic4(View view) {
+        Intent i3 = new Intent(MainActivity.this, appFileStructure.class);
+        startActivity(i3);
+    }
+    public void basic5(View view) {
+        Intent i6 = new Intent(MainActivity.this, StructuresActivity.class);
+        startActivity(i6);
+    }
+    public void basic6(View view) {
+        Intent i9 = new Intent(MainActivity.this, ManifestFile.class);
+        startActivity(i9);
+    }
+    public void basic7(View view) {
+        Intent i4 = new Intent(MainActivity.this, ResrawAsset.class);
+        startActivity(i4);
+    }
+    public void basic8(View view) {
+        Intent i7 = new Intent(MainActivity.this, ActivityLifecycle.class);
+        startActivity(i7);
+    }
+    public void basic9(View view) {
+        Intent i5 = new Intent(MainActivity.this, ContextTypes.class);
+        startActivity(i5);
+    }
+    public void basic10(View view) {
+        Intent i8 = new Intent(MainActivity.this, BundleActivity.class);
+        startActivity(i8);
+    }
+
+    public void widget1(View view) {
+        Intent i = new Intent(MainActivity.this, LayoutsActivity.class);
+        i.putExtra("value",0);
+        startActivity(i);
+    }
+    public void widget2(View view) {
+        Intent i = new Intent(MainActivity.this, LayoutsActivity.class);
+        i.putExtra("value",1);
+        startActivity(i);
+    }
+    public void widget3(View view) {
+        Intent i = new Intent(MainActivity.this, LayoutsActivity.class);
+        i.putExtra("value",2);
+        startActivity(i);
+    }
+
+    public void adpt1(View view) {
+        Intent i = new Intent(MainActivity.this, AdaptersActivity.class);
+        startActivity(i);
+    }
+    public void adpt2(View view) {
+        Intent i = new Intent(MainActivity.this, AdaptersActivity.class);
+        startActivity(i);
+    }
+    public void adpt3(View view) {
+        Intent i = new Intent(MainActivity.this, AdaptersActivity.class);
+        startActivity(i);
+    }
+    public void adpt4(View view) {
+        Intent i = new Intent(MainActivity.this, AdaptersActivity.class);
+        startActivity(i);
+    }
+
+    public void barchart1(View view) {
+        Intent i = new Intent(MainActivity.this, BarsActivity.class);
+        startActivity(i);
+    }public void barchart2(View view) {
+        Intent i1 = new Intent(MainActivity.this, CHartsActivity.class);
+        startActivity(i1);
+    }
+
+    public void mdanim1(View view) {
+        Intent i = new Intent(MainActivity.this, MDAndAnimation.class);
+        startActivity(i);
+    }public void mdanim2(View view) {
+        Intent i1 = new Intent(MainActivity.this, Animations.class);
+        startActivity(i1);
+    }
     @Override
     public void onBackPressed() {
         super.onBackPressed();
     }
     public void backtohome(View view) {
         onBackPressed();
+        Intent i = new Intent(this,HomeActivity.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(i);
+
     }
 
     public void basics1(View view) {
         onNavigationItemSelected(view);
         basicCommon();
+        finish();
     }
     public void widgets1(View view) {
         onNavigationItemSelected(view);
