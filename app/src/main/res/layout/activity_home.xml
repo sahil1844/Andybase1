@@ -45,11 +45,10 @@
             android:orientation="vertical">
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="338dp"
-                android:layout_height="173dp"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="31dp"
+                android:layout_width="320dp"
+                android:layout_height="170dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
                 android:src="@drawable/androidlogo" />
             <TextView
                 android:layout_width="match_parent"
@@ -58,7 +57,7 @@
                 android:layout_marginTop="10sp"
                 android:text="@string/introtitle"
                 android:textColor="@color/black"
-                android:textSize="18dp"
+                android:textSize="@dimen/headingtext"
                 android:textStyle="bold" />
 
             <TextView
@@ -68,7 +67,7 @@
                 android:layout_marginStart="40dp"
                 android:text="@string/home_para1"
                 android:textColor="@color/black"
-                android:textSize="14dp"/>
+                android:textSize="@dimen/simpletext"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -76,7 +75,7 @@
                 android:layout_marginTop="10sp"
                 android:text="Key Features of Android"
                 android:textColor="@color/black"
-                android:textSize="18dp"
+                android:textSize="@dimen/headingtext"
                 android:textStyle="bold" />
             <TextView
                 android:layout_width="350dp"
@@ -85,7 +84,7 @@
                 android:layout_marginStart="40dp"
                 android:text="@string/home_para2"
                 android:textColor="@color/black"
-                android:textSize="14dp" />
+                android:textSize="@dimen/simpletext" />
             <TextView
                 android:layout_width="350dp"
                 android:layout_height="match_parent"
@@ -231,4 +230,5 @@
                 android:textColor="@color/black" />
         </LinearLayout>
     </com.google.android.material.bottomnavigation.BottomNavigationView>
+
 </RelativeLayout>

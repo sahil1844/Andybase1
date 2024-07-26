@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,6 +18,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class HomeActivity extends AppCompatActivity {
+
+    private static final String PREFS_NAME = "MyAppPrefs";
 
     String username;
     Toolbar toolbar;
@@ -99,11 +103,21 @@ public class HomeActivity extends AppCompatActivity {
             Toast.makeText(this, "About", Toast.LENGTH_SHORT).show();
         }else if (id==R.id.logout) {
             Toast.makeText(this, "Logout", Toast.LENGTH_SHORT).show();
-            Intent i = new Intent(this, LoginActivity.class);
-            startActivity(i);
-            finish();
+           logoutUser();
         }
         return true;
+    }
+    private void logoutUser() {
+        // Clear login state
+        SharedPreferences sharedPreferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt("isLoggedIn", 1);
+        editor.apply();
+
+        // Redirect to login activity
+        Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
+        startActivity(intent);
+        finish();
     }
     @Override
     public void onBackPressed() {
@@ -115,9 +129,14 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(i);
     }
     public void profile1(MenuItem item) {
-        Intent i = new Intent(this, ProfileActivity.class);
-        i.putExtra("nm",username);
-        startActivity(i); }
+        if (username == null) {
+            Toast.makeText(this, "!!!", Toast.LENGTH_SHORT).show();
+        }else{
+            Intent i = new Intent(this, ProfileActivity.class);
+            i.putExtra("nm", username);
+            startActivity(i);
+        }
+    }
     public void about1(MenuItem item) {
         Intent i = new Intent(this, AboutActivity.class);
         startActivity(i); }

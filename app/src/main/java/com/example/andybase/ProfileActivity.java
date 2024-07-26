@@ -28,6 +28,7 @@ import com.makeramen.roundedimageview.RoundedImageView;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.util.Objects;
 
 public class ProfileActivity extends AppCompatActivity {
 
@@ -79,25 +80,33 @@ public class ProfileActivity extends AppCompatActivity {
         helper = new DBHelper(this);
         Intent i = getIntent();
         String username = i.getStringExtra("nm");
-        String s = "";
-        String f = "";
-        String l = "";
-        String p = "";
-        Cursor cr = helper.showdata(username);
-        if (cr.getCount() == 0) {
-            emailfeild.setText("Record not found!!!");
-        } else {
-            while (cr.moveToNext()) {
-                s = cr.getString(1) + cr.getString(2);
-                f = cr.getString(1);
-                l = cr.getString(2);
-                p += cr.getString(3);
-            }
+        if(username != null){
+            String s = "";
+            String f = "";
+            String l = "";
+            String p = "";
+            Cursor cr = helper.showdata(username);
+            if (cr.getCount() == 0) {
+                emailfeild.setText("Record not found!!!");
+            } else {
+                while (cr.moveToNext()) {
+                    s = cr.getString(1) + cr.getString(2);
+                    f = cr.getString(1);
+                    l = cr.getString(2);
+                    p += cr.getString(3);
+                }
                 fnamefeild.setText(f);
                 lnamefeild.setText(l);
                 usere.setText(p);
                 uname.setText(s);
                 emailfeild.setText(p);
+            }
+        } else {
+            fnamefeild.setText("");
+            lnamefeild.setText("");
+            usere.setText("");
+            uname.setText("");
+            emailfeild.setText("");
         }
 
         imageView.setOnClickListener(new View.OnClickListener() {
