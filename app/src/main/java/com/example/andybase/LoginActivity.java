@@ -129,7 +129,10 @@ public class LoginActivity extends AppCompatActivity {
                             Boolean checkCredentials = helper.checkemailpass(email, pass11);
                             if (checkCredentials) {
                                 Toast.makeText(LoginActivity.this, "Login Successfully!!", Toast.LENGTH_SHORT).show();
-                                loginUser(email);
+                                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                                intent.putExtra("homeem", email);
+                                startActivity(intent);
+                                finish();
                                 binding.LoginEmail.setText("");
                                 binding.LoginPassword.setText("");
                                 binding.email1.setHelperTextEnabled(false);
@@ -160,17 +163,17 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
-    private void loginUser(String email) {
-        SharedPreferences sharedPreferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putInt("isLoggedIn", 0);
-        editor.apply();
-
-        Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-        intent.putExtra("homeem", email);
-        startActivity(intent);
-        finish();
-    }
+//    private void loginUser(String email) {
+//        SharedPreferences sharedPreferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+//        SharedPreferences.Editor editor = sharedPreferences.edit();
+//        editor.putInt("isLoggedIn", 0);
+//        editor.apply();
+//
+//        Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+//        intent.putExtra("homeem", email);
+//        startActivity(intent);
+//        finish();
+//    }
     public boolean isValidPassword(final String password) {
         Pattern pattern;
         Matcher matcher;

@@ -21,21 +21,24 @@ public class SplashScreen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                SharedPreferences sharedPreferences = getSharedPreferences("MyAppPrefs", Context.MODE_PRIVATE);
-                int isLoggedIn = sharedPreferences.getInt("isLoggedIn", 1);
-
-                if (isLoggedIn == 0) {
-                    // User is logged in, start the HomeActivity
-                    Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
-                    intent.putExtra("homeem", "username");
-                    startActivity(intent);
-                    finish();
-                } else if (isLoggedIn == 1){
-                    // Show login activity
-                    Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-                    startActivity(intent);
-                    finish();
-                }
+//                SharedPreferences sharedPreferences = getSharedPreferences("MyAppPrefs", Context.MODE_PRIVATE);
+//                int isLoggedIn = sharedPreferences.getInt("isLoggedIn", 1);
+//
+//                if (isLoggedIn == 0) {
+//                    // User is logged in, start the HomeActivity
+//                    Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+//                    intent.putExtra("homeem", "username");
+//                    startActivity(intent);
+//                    finish();
+//                } else if (isLoggedIn == 1){
+//                    // Show login activity
+//                    Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+//                    startActivity(intent);
+//                    finish();
+//                }
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(intent);
+                finish();
             }
         }, 2000);
     }

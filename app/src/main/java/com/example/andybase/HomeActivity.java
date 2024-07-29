@@ -103,7 +103,10 @@ public class HomeActivity extends AppCompatActivity {
             Toast.makeText(this, "About", Toast.LENGTH_SHORT).show();
         }else if (id==R.id.logout) {
             Toast.makeText(this, "Logout", Toast.LENGTH_SHORT).show();
-           logoutUser();
+            Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
+            startActivity(intent);
+            finish();
+//           logoutUser();
         }
         return true;
     }
