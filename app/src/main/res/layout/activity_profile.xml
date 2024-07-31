@@ -97,7 +97,7 @@
                 app:startIconDrawable="@mipmap/person">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/profile_Fname"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:drawableTint="@color/black"
                     android:text="John"
                     android:inputType="textPersonName"
@@ -128,7 +128,7 @@
                 app:startIconDrawable="@mipmap/person">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/profile_Lname"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:drawableTint="@color/black"
                     android:text="Dones"
                     android:inputType="textPersonName"
@@ -160,7 +160,7 @@
                 app:startIconDrawable="@drawable/email">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/profile_Email"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:drawableTint="@color/black"
                     android:text="Test@123gmail.com"
                     android:inputType="textEmailAddress"
@@ -185,7 +185,7 @@
                 app:startIconDrawable="@drawable/password">
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:focusable="false"
                     android:text="Sahil123@"
                     android:textColor="@color/black"
