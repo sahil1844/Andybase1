@@ -37,7 +37,7 @@
             android:layout_gravity="center"/>
     </androidx.appcompat.widget.Toolbar>
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
+        android:id="@+id/layout"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_50sdp"
         app:cardCornerRadius="10dp"
@@ -67,7 +67,7 @@
             android:padding="20dp"/>
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView1"
+        android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_50sdp"
         app:cardCornerRadius="10dp"
@@ -97,7 +97,7 @@
             android:padding="20dp"/>
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView2"
+        android:id="@+id/btn"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_50sdp"
         app:cardCornerRadius="10dp"
@@ -371,6 +371,7 @@
                 android:drawableTop="@mipmap/unfillwidget"
                 android:textStyle="bold"
                 android:gravity="center"
+                android:onClick="widgets12"
                 android:text="widgets"
                 android:layout_weight="1"
                 android:textSize="@dimen/_8ssp"
@@ -383,6 +384,7 @@
                 android:paddingTop="10dp"
                 android:drawableTop="@mipmap/unfilladapter"
                 android:textStyle="bold"
+                android:onClick="Adpaters12"
                 android:text="Adpaters"
                 android:gravity="center"
                 android:textSize="@dimen/_8ssp"
@@ -394,6 +396,7 @@
                 android:paddingTop="10dp"
                 android:drawableTop="@mipmap/unfillcharts"
                 android:textStyle="bold"
+                android:onClick="Charts12"
                 android:text="Charts"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -405,6 +408,7 @@
                 android:layout_height="match_parent"
                 android:paddingTop="10dp"
                 android:drawableTop="@mipmap/unfillanimation"
+                android:onClick="Animation12"
                 android:text="Animation"
                 android:layout_weight="1"
                 android:gravity="center"

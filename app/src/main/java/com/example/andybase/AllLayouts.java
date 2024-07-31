@@ -14,7 +14,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class AllLayouts extends AppCompatActivity {
+public class AllLayouts extends HomeActivity {
 
     ScrollView scrollView;
     @Override
@@ -148,5 +148,30 @@ public class AllLayouts extends AppCompatActivity {
                 scrollView.scrollTo(0, 21160);
             }
         });
+    }
+
+    public void basic1(View view) {
+        onNavigationItemSelected(view);
+        basicCommon();
+    }
+
+    public void widget1(View view) {
+        onNavigationItemSelected(view);
+        widgetsCommon();
+    }
+
+    public void adapter1(View view) {
+        onNavigationItemSelected(view);
+        adaptersCommon();
+    }
+
+    public void charts1(View view) {
+        onNavigationItemSelected(view);
+        barchartsCommon();
+    }
+
+    public void anim1(View view) {
+        onNavigationItemSelected(view);
+        animationsCommon();
     }
 }

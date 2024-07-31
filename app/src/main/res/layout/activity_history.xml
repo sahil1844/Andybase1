@@ -238,6 +238,7 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
             <TextView
+                android:id="@+id/nav_basic"
                 android:layout_width="80sp"
                 android:layout_height="match_parent"
                 android:textStyle="bold"

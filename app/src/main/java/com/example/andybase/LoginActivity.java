@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -26,6 +27,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class LoginActivity extends AppCompatActivity {
+    private static final String PREFS_NAME = "MyAppPrefs";
+
     ActivityLoginBinding binding;
     DBHelper helper;
     @Override
@@ -34,6 +37,7 @@ public class LoginActivity extends AppCompatActivity {
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+
         helper = new DBHelper(this);
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         binding.LoginPassword.addTextChangedListener(new TextWatcher() {
@@ -125,9 +129,10 @@ public class LoginActivity extends AppCompatActivity {
                             Boolean checkCredentials = helper.checkemailpass(email, pass11);
                             if (checkCredentials) {
                                 Toast.makeText(LoginActivity.this, "Login Successfully!!", Toast.LENGTH_SHORT).show();
-                                Intent i = new Intent(LoginActivity.this, HomeActivity.class);
-                                i.putExtra("homeem", email);
-                                startActivity(i);
+                                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                                intent.putExtra("homeem", email);
+                                startActivity(intent);
+                                finish();
                                 binding.LoginEmail.setText("");
                                 binding.LoginPassword.setText("");
                                 binding.email1.setHelperTextEnabled(false);
@@ -158,6 +163,17 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+//    private void loginUser(String email) {
+//        SharedPreferences sharedPreferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+//        SharedPreferences.Editor editor = sharedPreferences.edit();
+//        editor.putInt("isLoggedIn", 0);
+//        editor.apply();
+//
+//        Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+//        intent.putExtra("homeem", email);
+//        startActivity(intent);
+//        finish();
+//    }
     public boolean isValidPassword(final String password) {
         Pattern pattern;
         Matcher matcher;

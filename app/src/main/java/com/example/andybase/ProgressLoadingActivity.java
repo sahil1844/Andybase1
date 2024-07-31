@@ -25,7 +25,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.VideoView;
 
-public class ProgressLoadingActivity extends AppCompatActivity {
+public class ProgressLoadingActivity extends HomeActivity {
 
     ScrollView scrollView;
     Button button, button2, button3, button4;
@@ -299,5 +299,30 @@ public class ProgressLoadingActivity extends AppCompatActivity {
                 scrollView.scrollTo(0, 8640);
             }
         });
+    }
+
+    public void basiclbtn(View view) {
+        onNavigationItemSelected(view);
+        basicCommon();
+    }
+
+    public void widgetlbtn(View view) {
+        onNavigationItemSelected(view);
+        widgetsCommon();
+    }
+
+    public void adptlbtn(View view) {
+        onNavigationItemSelected(view);
+        adaptersCommon();
+    }
+
+    public void chartlbtn(View view) {
+        onNavigationItemSelected(view);
+        barchartsCommon();
+    }
+
+    public void animlbtn(View view) {
+        onNavigationItemSelected(view);
+        animationsCommon();
     }
 }
